@@ -1,0 +1,99 @@
+<div
+  class="slide bg-slide slide-{{ loop.index }} bg-theme-{{ question.field_color_theme }}"
+  id="slide{{ loop.index + 1 }}"
+  style="background-image: url('{{ question.secondary_image }}');"
+>
+  <div
+    class="d-flex flex-column justify-content-center align-items-center top-space"
+  >
+    <div class="main-object" style="top: 5% !important">
+      <img
+        class="img-fluid slide-1-img"
+        src="{{ question.main_image }}"
+        alt=""
+      />
+    </div>
+    <div
+      class="question-slide-text slide-text-animation"
+      style="bottom: 8% !important"
+    >
+      <div
+        class="slide-text highlight-block mt-3 mx-auto text-center text-dev text-white font-weight-bolder"
+        data-bg-color-theme="bg-theme-{{ question.field_color_theme }}"
+      >
+        {{ question.title }}
+      </div>
+
+      {% set adjusted_field_fri = question.field_fri starts with '/' ?
+      question.field_fri|slice(1) : question.field_fri %}
+      <div class="slide-cta d-flex justify-content-center mt-4 pt-1 -mx-4">
+        <a
+          class="btn bg-theme-{{ question.field_color_theme }} btn-animation txt-neutral-100 fw-bolder mx-4 btn-confirm"
+          href="{{ path('oxplore_ui.big_question_detail', { field_fri: adjusted_field_fri }) }}"
+          role="button"
+          >Yes</a
+        >
+        <a
+          class="btn bg-theme-{{ question.field_color_theme }} btn-animation txt-neutral-100 fw-bolder mx-4 btn-confirm"
+          href="{{ path('oxplore_ui.big_question_detail', { field_fri: adjusted_field_fri }) }}"
+          role="button"
+          >No</a
+        >
+      </div>
+    </div>
+    <div class="more-cta-btn">
+      <a
+        class="btn bg-transparent txt-neutral-100 fw-regular text-uppercase border-0 fs-big-450"
+        onclick="scrollToSection1()"
+        role="button"
+        >more big questions this way
+        <i class="fas fa-caret-down fs-small-800 d-block"></i>
+      </a>
+    </div>
+  </div>
+  <div
+    class="triangle_shape triangle__blue d-flex justify-content-center align-items-end"
+  >
+    {{ question.b_q_type }}
+  </div>
+</div>
+
+<!-- question tiles -->
+{% set col_md = grid_size == 1 ? 12 : 6 %} {% if (grid_size == 1) or (grid_size
+== 4 and loop.index>3)%} {% set col_lg = 12 %} {% elseif (grid_size == 2) or
+(grid_size == 5 and loop.index>3)%} {% set col_lg = 6 %} {% elseif grid_size >=
+3%} {% set col_lg = 4 %} {% endif %}
+<div class="col-md-{{ col_md }} col-lg-{{ col_lg }}">
+  <div
+    class="tile bg-slide bg-theme-{{ question.field_color_theme }} overflow-hidden"
+    style="background-image:url('{{ question.secondary_image }}')"
+  >
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="question-ans-card animation-{{ loop.index }}">
+        <div
+          class="slide-text highlight-block mt-3 mx-auto text-center text-dev is-list text-white font-weight-bolder q-list-text"
+          data-bg-color-theme="bg-theme-{{ question.field_color_theme }}"
+        >
+          {{ question.title }}
+        </div>
+
+        {% set adjusted_field_fri = question.field_fri starts with '/' ?
+        question.field_fri|slice(1) : question.field_fri %}
+        <div class="slide-cta d-flex justify-content-center mt-5 mb-0 -mx-4">
+          <a
+            class="btn bg-theme-{{ question.field_color_theme }} txt-neutral-100 fw-bolder mx-4 btn-confirm"
+            href="{{ path('oxplore_ui.big_question_detail', { field_fri: adjusted_field_fri }) }}"
+            role="button"
+            >Yes</a
+          >
+          <a
+            class="btn bg-theme-{{ question.field_color_theme }} txt-neutral-100 fw-bolder mx-4 btn-confirm"
+            href="{{ path('oxplore_ui.big_question_detail', { field_fri: adjusted_field_fri }) }}"
+            role="button"
+            >No</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,520 @@
+
+
+@keyframes swing {
+  20% {
+    transform: rotate(7deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.triangle_shape {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  color: #fff;
+  right: -105px;
+  top: -105px;
+  text-transform: capitalize;
+  transform: rotate(45deg);
+  /* inset: -85px -156px auto auto; */
+  padding-bottom: 20px;
+  font-weight: 600;
+  box-shadow: 0 0 10px #031d40;
+}
+
+.triangle__blue {
+  background: repeating-linear-gradient(
+    45deg,
+    #2887c9,
+    #2887c9 10px,
+    #2479b4 10px,
+    #2479b4 20px
+  );
+}
+.triangle__pink {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff007a,
+    #ff007a 10px,
+    #e6006e 10px,
+    #e6006e 20px
+  );
+}
+.triangle__green {
+  background: repeating-linear-gradient(
+    45deg,
+    #92c01f,
+    #92c01f 10px,
+    #81aa1b 10px,
+    #81aa1b 20px
+  );
+}
+
+.section,
+.bg-slide,
+.tile {
+  background-size: cover;
+  background-position: center;
+}
+/* .section .top-space,
+.bg-slide .top-space,
+.tile .top-space {
+  margin-top: 6em;
+} */
+
+.top-pad {
+  padding-top: 70px;
+}
+
+.slide-1-img {
+  width: 800px;
+  max-height: 500px;
+  object-fit: scale-down;
+}
+
+.bg-slide {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.transform-top {
+  transform: translateY(-38%);
+}
+
+.section .highlight-block {
+  /*width: 440px;*/
+  max-width: 100%;
+}
+.section .highlight-block h1,
+.section .highlight-block h2 {
+  box-shadow: 7px 7px 4px 0px rgba(0, 0, 0, 0.5);
+  margin: -1px 0px 0px 0px;
+  padding: 0px 30px 15px 30px;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1;
+}
+.section .highlight-block h1:first-of-type,
+.section .highlight-block h2:first-of-type {
+  padding-top: 8px;
+}
+.section .highlight-block h1:last-of-type,
+.section .highlight-block h2:last-of-type {
+  padding-bottom: 18px;
+}
+.section .slide-cta {
+  margin-bottom: 5em;
+}
+.section .slide-cta .btn {
+  box-shadow: 7px 7px 4px 0px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  transform: rotate(0deg);
+  height: 60px;
+  line-height: 55px;
+  transition: font-size 0.3s, height 0.3s, line-height 0.3s, width 0.3s,
+    background-color 0.3s, border 0.3s, color 0.3s;
+  width: 140px;
+  margin: 0px 10px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 0px;
+  color: #fff;
+}
+
+/* Section Call to Action Button themes */
+.section .slide-cta .btn:not(.theme-title):hover,
+.section .slide-cta .btn:not(.theme-title):focus {
+  text-decoration: none;
+  background-color: var(--clr-neutral-100) !important;
+}
+.section .slide-cta .btn.theme-title:hover,
+.section .slide-cta .btn.theme-title:focus {
+  text-decoration: none;
+}
+
+.section .slide-cta .btn:hover.bg-theme-pink {
+  border-color: var(--clr-theme-pink);
+  color: var(--clr-theme-pink) !important;
+}
+.section .slide-cta .btn:hover.bg-theme-green {
+  border-color: var(--clr-theme-green);
+  color: var(--clr-theme-green) !important;
+}
+.section .slide-cta .btn:hover.bg-theme-blue {
+  border-color: var(--clr-theme-blue);
+  color: var(--clr-theme-blue) !important;
+}
+.section .slide-cta .btn:hover.bg-theme-red {
+  border-color: var(--clr-theme-red);
+  color: var(--clr-theme-red) !important;
+}
+.section .slide-cta .btn:hover.bg-theme-maroon {
+  border-color: var(--clr-theme-maroon);
+  color: var(--clr-theme-maroon) !important;
+}
+.section .slide-cta .btn:hover.bg-theme-purple {
+  border-color: var(--clr-theme-purple);
+  color: var(--clr-theme-purple) !important;
+}
+
+/* .section.active .slide.active .main-object.jumping_one {
+  animation: jumping_one 1.5s 1;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: jumping_one;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+}
+.slide .main-object.jumping_one {
+  animation: jumping_three 1.5s 1;
+}
+
+@keyframes jumping_one {
+  25% {
+    left: 10%;
+    transform: rotate(-30deg) scale(0.5, 0.5);
+    transform-origin: center;
+    top: 60%;
+  }
+  50% {
+    left: 50%;
+    transform: rotate(10deg) scale(0.75, 0.75);
+    transform-origin: center;
+    top: 40%;
+  }
+  75% {
+    left: 15%;
+    transform: rotate(-10deg) scale(2, 2);
+    transform-origin: center;
+    top: 25%;
+  }
+  100% {
+    left: 80%;
+    transform: rotate(0deg) scale(1, 1) translateX(-50%);
+    transform-origin: center;
+    top: 10%;
+  }
+}
+
+.section.active .slide.active .main-object.jumping_two {
+  animation: jumping_two 1.5s 1;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: jumping_two;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+}
+.slide .main-object.jumping_two {
+  animation: jumping_one 1.5s 1;
+}
+
+@keyframes jumping_two {
+  25% {
+    left: 70%;
+    transform: rotate(15deg) scale(2, 2);
+    transform-origin: center;
+    top: 60%;
+  }
+  50% {
+    left: 50%;
+    transform: rotate(5deg) scale(0.75, 0.75);
+    transform-origin: center;
+    top: 30%;
+  }
+  75% {
+    left: 10%;
+    transform: rotate(-10deg) scale(1.5, 1.5);
+    transform-origin: center;
+    top: 20%;
+  }
+  100% {
+    left: 50%;
+    transform: rotate(0deg) scale(1, 1) translateX(-50%);
+    transform-origin: center;
+    top: 10%;
+  }
+}
+
+.section.active .slide.active .main-object.jumping_three {
+  animation: jumping_three 1.5s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: jumping_three;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+}
+.slide .main-object.jumping_three {
+  animation: jumping_two 1.5s 1;
+}
+
+@keyframes jumping_three {
+  25% {
+    left: 50%;
+    transform-origin: center;
+    transform: scale(0.5) translateX(-50%);
+    top: 15%;
+  }
+
+  50% {
+    left: 20%;
+    transform: rotate(-170deg) scale(1, 1);
+    transform-origin: center;
+    top: 40%;
+  }
+
+  75% {
+    left: 15%;
+    transform: rotate(-10deg) scale(2, 2);
+    transform-origin: center;
+    top: 25%;
+  }
+
+  100% {
+    left: 50%;
+    transform: rotate(0deg) scale(1, 1) translateX(-50%);
+    transform-origin: center;
+    top: 15%;
+  }
+} */
+
+.main-object {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  left: 50%;
+  max-width: none;
+  position: absolute;
+  right: 0px;
+  top: 15%;
+  transform: translateX(-50%);
+  width: 800px;
+}
+
+.section .highlight-block h1,
+.section .highlight-block h2 {
+  padding: 10px 30px 10px 30px !important;
+}
+.bg-slide {
+  overflow: hidden;
+}
+.section .highlight-block {
+  /*width: 560px !important;*/
+}
+.question-slide-text .slide-text h1,
+.question-slide-text .slide-text h2 {
+  white-space: initial !important;
+}
+
+.slide-text {
+  font-size: 43px;
+  line-height: 36px;
+}
+
+.bg-clr {
+  background: var(--clr-theme-pink);
+}
+
+.bg-clr-green {
+  background: var(--clr-theme-green);
+}
+
+.bg-clr-blue {
+  background: var(--clr-theme-blue);
+}
+
+.question-ans-card .slide-text h3 {
+  white-space: initial !important;
+  font-size: 28px !important;
+  box-shadow: 7px 7px 4px 0px rgba(0, 0, 0, 0.5);
+}
+.question-ans-card .slide-text h2 {
+  white-space: initial !important;
+  font-size: 28px !important;
+}
+/* .slide-3 .main-object {
+  top: 6%;
+} */
+#slide1 {
+  overflow: hidden !important;
+}
+.question-slide {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 105%;
+  margin: auto;
+  width: 440px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: bottom 1s, transform 1s;
+  transform: rotate(359deg);
+}
+.section.active .question-slide {
+  bottom: 25%;
+  transform: rotate(0deg);
+}
+
+.btn-confirm:hover {
+  animation: swing 0.5s ease-in-out infinite;
+  /* if you really want the white bg on hover: */
+  background-color: #fff !important;
+}
+
+/* btn yes/no */
+
+.slide-cta .btn-confirm {
+  font-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+}
+
+.a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+/* ─── Full‐slide flex‐column layout ─── */
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide .main-object {
+  position: static !important;
+  /* transform: none !important; */
+  /* position: static; */
+  /* transform: none; */
+  margin-bottom: 5rem;
+}
+
+.question-slide-text {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  margin: -15vh auto 0;
+  text-align: center;
+}
+
+.highlight-block {
+  white-space: normal !important;
+}
+
+.slide-cta {
+  display: flex !important;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.slide-cta .btn-confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-cta-btn {
+  position: static !important;
+  /* margin-top: 50px; */
+  margin-bottom: 2rem;
+}
+
+.main-object {
+  position: relative !important;
+  transform: none !important;
+  width: 100%;
+  height: auto;
+}
+
+.question-slide-text {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .question-slide-text {
+    bottom: -5%;
+    width: 95%;
+  }
+
+  .slide-text {
+    padding: 1rem;
+    font-size: 0.8em;
+  }
+}
+
+/* Ensure text stays on top of image */
+.main-object-container {
+  z-index: 0;
+}
+
+.question-slide-text {
+  z-index: 1;
+}
+
+.slide-text-animation,
+.question-slide-text {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 105%;
+  margin: auto;
+  width: 600px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: bottom 1s, transform 1s;
+  transform: rotate(359deg);
+}
+.section.active .slide.active .slide-text-animation,
+.section.active .question-slide-text {
+  bottom: 25%;
+  transform: rotate(0deg);
+}
+
+
+
+
+
