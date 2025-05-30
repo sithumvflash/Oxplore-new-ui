@@ -500,6 +500,156 @@
           </div>
         </div>
       </section>
+
+      <!-- question list with plus icons -->
+
+      <section
+        id="questionList"
+        class="question-list-section bg-blue-300 text-white text-center py-5"
+      >
+        <div class="container">
+          <div class="sub-header-section">
+            <h2 class="fw-bold">5 ways nursing has changed over time</h2>
+          </div>
+          <div class="question-list-wrapper">
+            <ol class="question-list-main">
+              <li class="top-level">
+                <span class="question-text">
+                  <b><span class="question-number"></span>Qualifications</b>
+                  <span class="toggle-icon fw-500">+</span>
+                </span>
+                <ol class="answer fw-200">
+                  <li>
+                    Florence Nightingale (known as the founder of modern
+                    nursing) started the first formal nursing training in 1860.
+                    At this stage, teaching tended to focus heavily on
+                    etiquette, like how to be polite to your patients and dress
+                    smartly. Even as recently as the 1970s, new nurses would
+                    learn the large parts of the job from their ward sister.
+                    Take wounds called bedsores for example: ward sisters would
+                    treat them with anything from talcum powder to porridge! And
+                    whatever your ward sister used, you would use too. Nowadays,
+                    nursing is a graduate career, meaning you have to study a
+                    three-year degree to become a qualified nurse. Nursing
+                    degree apprenticeships are being developed in 2017 to offer
+                    a flexible route into the profession.
+                  </li>
+                </ol>
+              </li>
+
+              <li class="top-level">
+                <span class="question-text">
+                  <b><span class="question-number"></span>Lifestyle</b>
+                  <span class="toggle-icon">+</span>
+                </span>
+                <ol class="answer">
+                  <li>
+                    Nurses work incredibly hard to keep their patients happy and
+                    healthy, often working long hours and on weekends. But
+                    before 1950, aspiring nurses had another commitment to make
+                    when choosing the career: as a nurse, you were not allowed
+                    to get married. Hospital nurses were all women. They lived
+                    together in a home, which had to be kept tidy and was
+                    inspected every day. Lights went out at 10pm in time for
+                    bed! It might seem odd to us now for a career to determine
+                    your lifestyle like that. With improvements in personal
+                    transport and communications, nurses have since been given
+                    more freedom like any other profession. This has included
+                    men becoming registered nurses too, although currently only
+                    around 10% of nurses in the UK are male.
+                  </li>
+                </ol>
+              </li>
+
+              <li class="top-level">
+                <span class="question-text">
+                  <b><span class="question-number"></span>Daily duties</b>
+                  <span class="toggle-icon">+</span>
+                </span>
+                <ol class="answer">
+                  <li>
+                    Our ability to treat symptoms depends on the medicines and
+                    machines we have available to us. In 1941, a new drug was
+                    tested on humans for the first time. Penicillin, the world’s
+                    first antibiotic (a drug that kills bacteria), was used to
+                    treat an infected scratch. Although the patient didn’t
+                    survive, his medical team immediately saw the potential for
+                    antibiotics to save millions of lives from infection.
+                    Similarly, in the 1950s, dialysis machines were brought in
+                    for patients with kidney failure, and ventilators were
+                    invented for patients who couldn’t breathe by themselves.
+                    Together, these and other technology breakthroughs meant
+                    that nurses no longer had to spend their working hours
+                    sterilizing wards, performing lengthy procedures and
+                    cleaning infected wounds - instead they could be treating
+                    more complex diseases. Nowadays, nurses are able to
+                    prescribe drugs and are trained to deal with a wide range of
+                    diseases without needing a doctor’s approval. They also
+                    carry out research with patients, to help us understand how
+                    to treat people better.
+                  </li>
+                </ol>
+              </li>
+
+              <li class="top-level">
+                <span class="question-text">
+                  <b
+                    ><span class="question-number"></span>Demands on
+                    healthcare</b
+                  >
+                  <span class="toggle-icon">+</span>
+                </span>
+                <ol class="answer">
+                  <li>
+                    In the UK, life expectancy has been steadily increasing
+                    since the mid-1800s. In just the last 100 years, life
+                    expectancy has increased a huge amount, from 55 to 85 years.
+                    Standards of living have improved, technology has boomed and
+                    we have learned a lot about how different diseases work.
+                    This means that people now survive the conditions they used
+                    to die from, like the bacterial infections we now treat with
+                    a just a few pills or an injection. There are more people
+                    around in general, each with more health problems to be
+                    treated. The impact of our ageing population on healthcare
+                    is huge: since 2002/3 emergency hospital admissions have
+                    increased by 1/3. Hospital treatments have become shorter
+                    but more common: now a condition that would take a week to
+                    treat can be cured in a day. Altogether, more people coming
+                    into hospitals with more health problems means that nurses
+                    have to see far more patients and deal with more complicated
+                    needs.
+                  </li>
+                </ol>
+              </li>
+
+              <li class="top-level">
+                <span class="question-text">
+                  <b><span class="question-number"></span>The Internet</b>
+                  <span class="toggle-icon">+</span>
+                </span>
+                <ol class="answer">
+                  <li>
+                    Technology has huge power to help patients, and to change
+                    how nurses interact with them. With access to the internet,
+                    patients can access more information about their medical
+                    condition, how their treatment works and why they use it.
+                    They can also get support and advice from people in a
+                    similar position, or expertise from a range of medical
+                    professionals. This shift in where patients get their
+                    information from has had a big impact on how nurses best do
+                    their jobs. Now, nurses can help patients keep track of
+                    their own medications and test results, giving them a
+                    different role in a patient’s care than simply administering
+                    treatments. There is so much potential for technology in
+                    healthcare and nursing, who knows what the next development
+                    will be.
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Bootstrap JS bundle -->
@@ -589,6 +739,37 @@
           }
 
           lastScrollY = currentScrollY;
+        });
+      });
+    </script>
+
+    <!-- js for question list -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const questions = document.querySelectorAll(".top-level");
+
+        questions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const answer = item.querySelector(".answer");
+            const icon = item.querySelector(".toggle-icon");
+            const isOpen = answer.classList.contains("show");
+
+            // Close all others
+            document.querySelectorAll(".answer").forEach((a) => {
+              a.style.maxHeight = null;
+              a.classList.remove("show");
+            });
+            document
+              .querySelectorAll(".toggle-icon")
+              .forEach((i) => (i.textContent = "+"));
+
+            // Toggle current
+            if (!isOpen) {
+              answer.classList.add("show");
+              answer.style.maxHeight = answer.scrollHeight + "px"; // animate exact height
+              icon.textContent = "×";
+            }
+          });
         });
       });
     </script>

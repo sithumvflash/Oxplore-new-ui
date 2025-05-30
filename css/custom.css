@@ -473,7 +473,7 @@
   margin: 0;
 }
 
-/* For smaller screens */
+
 @media (max-width: 768px) {
   .question-slide-text {
     bottom: -5%;
@@ -486,7 +486,7 @@
   }
 }
 
-/* Ensure text stays on top of image */
+
 .main-object-container {
   z-index: 0;
 }

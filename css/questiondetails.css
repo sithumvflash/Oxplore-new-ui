@@ -6,7 +6,7 @@ label,
 input,
 button {
   font-family: "Soleil Bk", sans-serif;
-  font-weight: normal;
+  
 }
 
 /* 4. Bold weight — headings, strong, .font-bold utility */
@@ -19,7 +19,7 @@ h6,
 strong,
 .font-bold {
   font-family: "Soleil", sans-serif;
-  font-weight: bold;
+  
 }
 
 .question-detail-section {
@@ -271,7 +271,7 @@ strong,
 
 #sliding-article-section .container {
   position: absolute;
-  top: calc(50% + 40px); /* adjust below navbar */
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -436,6 +436,155 @@ strong,
 /* video screen styles end */
 
 
+/* question list with plus icons styles */
+
+.question-list-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.question-list-section .container {
+  position: absolute;
+  /* top: calc(50% + 40px);  */
+  top: calc(50% + 40px); 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+
+.question-list-section .sub-header-section {
+  margin: 0 auto 20px auto;
+  max-width: 650px;
+  width: 100%;
+}
+
+
+.question-list-section .sub-header-section h2 {
+  display: inline-block;
+  padding: 10px 30px 15px;
+  font-family: "Soleil", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  color: #fff;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.question-list-main {
+  padding: 0;
+  margin: 80px 0 0;
+  list-style-position: inside;
+  counter-reset: section;
+  display: block;
+  list-style-type: decimal;
+  padding-inline-start: 0;
+}
+
+.question-list-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+.top-level {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 21px;
+  line-height: 1.5;
+  padding: 0 45px 15px 30px;
+  margin: 10px 0;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  list-style: none;
+  position: relative;
+  counter-increment: section;
+  text-align: left;
+}
+
+.top-level .question-number::before {
+  content: counter(section) ". ";
+  margin-right: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.top-level:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.top-level b {
+  font-size: 21px;
+  line-height: 1.5;
+  user-select: none;
+  list-style: none;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+  counter-reset: foo;
+  user-select: text;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin-top: 0;
+}
+
+.answer.show {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+
+.answer li {
+  background-image: none;
+  font-size: 16px;
+  font-weight: 200 !important;
+  border: none;
+  cursor: default;
+  list-style-position: outside;
+  line-height: 1.5;
+  margin: 15px 0;
+  text-indent: 0;
+  padding-left: 0;
+  color: #fff;
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 30px;
+  top: 5px;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.answer li {
+  font-weight: 200 !important;
+  font-family: "Soleil Bk", sans-serif !important;
+}
 
 
 
