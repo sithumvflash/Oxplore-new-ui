@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/custom.css" />
     <link rel="stylesheet" href="../css/questiondetails.css" />
+    <link rel="stylesheet" href="../css/customebuttons.css" />
     <!-- any other CSS files you use -->
     <title>Question Detail</title>
   </head>
@@ -650,6 +651,78 @@
           </div>
         </div>
       </section>
+
+      <!-- swipe questions page -->
+      <section
+        id="swipeQuestions"
+        class="swipequestions-section bg-theme-blue text-white text-center py-5"
+      >
+        <div class="container">
+          <div class="sub-header-section">
+            <h2 class="fw-bold">Guess the salary</h2>
+          </div>
+          <div class="swipe-question-wrapper">
+            <div
+              class="swipe-question-container position-relative overflow-hidden"
+            >
+              <div class="question-slide active">
+                <p class="question-header">
+                  One of the highest paid positions in nursing is the Director
+                  of Nursing. How long would it take a Director of Nursing to
+                  earn the annual salary of a premier league footballer?
+                </p>
+                <ul class="answers-list mt-4 text-start">
+                  <li data-correct="true">
+                    <span class="answer-circle"></span> 25 years
+                  </li>
+                  <li><span class="answer-circle"></span> 15 years</li>
+                  <li><span class="answer-circle"></span> 10 years</li>
+                </ul>
+                <p class="answer-description mt-4 d-none">
+                  The annual average salary of a Director of Nursing is £95,000,
+                  less than 5% of the average premier league salary.
+                </p>
+              </div>
+
+              <div class="question-slide">
+                <p class="question-header">
+                  How many midwives could you pay with a Premier League
+                  footballer’s salary?
+                </p>
+                <ul class="answers-list mt-4 text-start">
+                  <li><span class="answer-circle"></span> 17</li>
+                  <li data-correct="true">
+                    <span class="answer-circle"></span> 67
+                  </li>
+                  <li><span class="answer-circle"></span> 37</li>
+                </ul>
+                <p class="answer-description mt-4 d-none">
+                  The average salary of a midwife is around £37,000. A
+                  footballer earning £2.5m/year could pay around 67 midwives.
+                </p>
+              </div>
+            </div>
+
+            <!-- Prev & Next buttons -->
+            <div
+              class="slide-cta d-flex justify-content-center mt-4 pt-1 mx-n4"
+            >
+              <a
+                class="btn bg-theme-blue btn-prevnext btn-prev d-none"
+                href="#"
+                role="button"
+                >Prev</a
+              >
+              <a
+                class="btn bg-theme-blue btn-prevnext btn-next"
+                href="#"
+                role="button"
+                >Next</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Bootstrap JS bundle -->
@@ -769,6 +842,94 @@
               answer.style.maxHeight = answer.scrollHeight + "px"; // animate exact height
               icon.textContent = "×";
             }
+          });
+        });
+      });
+    </script>
+
+    <!-- js for swipe question -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".question-slide");
+        const nextBtn = document.querySelector(".btn-next");
+        const prevBtn = document.querySelector(".btn-prev");
+        let currentIndex = 0;
+
+        //  Initially, give only the first slide the .active class
+        slides.forEach((slide, idx) => {
+          if (idx === 0) {
+            slide.classList.add("active");
+          } else {
+            slide.classList.remove("active");
+          }
+        });
+        prevBtn.classList.add("d-none"); // hide "Prev" at start
+
+        function updateSlide(direction) {
+          //  Remove .active & any animation classes from the old slide
+          slides[currentIndex].classList.remove(
+            "active",
+            "slide-in-left",
+            "slide-in-right"
+          );
+
+          //  Advance or go back
+          if (direction === "next") {
+            currentIndex = Math.min(currentIndex + 1, slides.length - 1);
+          } else {
+            currentIndex = Math.max(currentIndex - 1, 0);
+          }
+
+          // Add .active + the correct animation class to the new slide
+          slides[currentIndex].classList.add(
+            "active",
+            direction === "next" ? "slide-in-left" : "slide-in-right"
+          );
+
+          // Show/hide Prev button
+          if (currentIndex === 0) {
+            prevBtn.classList.add("d-none");
+          } else {
+            prevBtn.classList.remove("d-none");
+          }
+        }
+
+        nextBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (currentIndex < slides.length - 1) {
+            updateSlide("next");
+          }
+        });
+
+        prevBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (currentIndex > 0) {
+            updateSlide("prev");
+          }
+        });
+
+        //  Handle answer selection 
+        document.querySelectorAll(".answers-list").forEach((list) => {
+          list.querySelectorAll("li").forEach((li) => {
+            li.addEventListener("click", () => {
+              if (list.classList.contains("answered")) return;
+              list.classList.add("answered");
+
+              const correctLi = list.querySelector('li[data-correct="true"]');
+              const description = list.parentElement.querySelector(
+                ".answer-description"
+              );
+
+              li.classList.add("selected");
+              if (li.dataset.correct === "true") {
+                li.classList.add("correct");
+              } else {
+                li.classList.add("incorrect");
+                correctLi.classList.add("correct");
+              }
+
+              if (description) description.classList.remove("d-none");
+            });
           });
         });
       });
