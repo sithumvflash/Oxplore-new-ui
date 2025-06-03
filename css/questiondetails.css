@@ -729,4 +729,120 @@ strong,
 }
 
 
+/* plus and minus page styles */
+
+
+.plus-minus-qsection {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus-minus-qsection .container {
+  position: absolute;
+  /* top: calc(50% + 40px);  */
+  top: calc(50% + 40px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+.plus-minus-qsection .sub-header-section {
+  margin: 0 auto 20px auto;
+  max-width: 650px;
+  width: 100%;
+}
+
+.plus-minus-qsection .sub-header-section h2 {
+  display: inline-block;
+  /* padding: 10px 30px 15px; */
+  font-family: "Soleil", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  color: #fff;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+
+
+
+
+.plus-minus-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+}
+
+.pm-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.plus-minus-list .pm-content {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  font-size: 21px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.plus-minus-list .pm-content.even {
+  flex-direction: row !important; 
+}
+
+.plus-minus-list .pm-content.odd {
+  flex-direction: row-reverse !important; 
+}
+
+.pm-icon {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+
+.pm-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  /* Animate only max-height and opacity */
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  font-size: 16px;
+  font-weight: 300 !important;    
+  padding: 0 0 15px 0;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.pm-answer.show {
+  /* max-height: 300px; */
+  opacity: 1;
+}
+
+
+.pm-text,
+.pm-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
 

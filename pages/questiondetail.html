@@ -520,7 +520,7 @@
                   <b><span class="question-number"></span>Qualifications</b>
                   <span class="toggle-icon fw-500">+</span>
                 </span>
-                <ol class="answer fw-200">
+                <ol class="answer">
                   <li>
                     Florence Nightingale (known as the founder of modern
                     nursing) started the first formal nursing training in 1860.
@@ -724,14 +724,103 @@
           </div>
         </div>
       </section>
+
+      <!-- plus and minus question page -->
+      <section
+        id="plusMinusQuestions"
+        class="plus-minus-qsection bg-blue-500 text-white text-center py-5"
+      >
+        <div class="container">
+          <div class="sub-header-section">
+            <h2 class="fw-bold">Should footballers earn more than nurses?</h2>
+          </div>
+          <ul class="plus-minus-list mt-5 text-start mx-auto">
+            <li class="pm-item">
+              <div class="pm-row" data-index="0">
+                <!-- ALWAYS put text <span> first, then icon <span> -->
+                <div class="pm-content even">
+                  <span class="pm-text">Supply and demand</span>
+                  <span class="pm-icon"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="pm-answer">
+                  There are several factors that determine how much you get paid
+                  for doing a job but one of the key ones relates to the process
+                  of supply and demand. Let’s revisit the example of a high
+                  earner like Ronaldo… The number of people who have world-class
+                  football skills (i.e. the supply) is low and the demand to
+                  watch world-class football games and players is very high.
+                  Having a super star player like Ronaldo in your team generates
+                  millions in tickets and merchandise sales. And so his football
+                  club considered his high salary worth it in the long run. Do
+                  you think this is fair?
+                </div>
+              </div>
+            </li>
+            <li class="pm-item">
+              <div class="pm-row" data-index="1">
+                <div class="pm-content odd">
+                  <span class="pm-text">It’s excessive</span>
+                  <span class="pm-icon"><i class="fas fa-minus"></i></span>
+                </div>
+                <div class="pm-answer">
+                  The average salary of a first-team Premier League footballer
+                  is £2.4 million. With this income, you could buy 192 Ford
+                  Fiestas, 4006 iPhone 7s and 802,676 Big Macs. Does any one
+                  person really need all this money? Think of all the nurses
+                  this sum could fund through training…
+                </div>
+              </div>
+            </li>
+            <li class="pm-item">
+              <div class="pm-row" data-index="2">
+                <div class="pm-content even">
+                  <span class="pm-text">They give something back</span>
+                  <span class="pm-icon"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="pm-answer">
+                  The England Footballers’ Foundation gives players the chance
+                  to donate to charity, the fees they would normally get for
+                  playing an international match. Players also use their high
+                  profile to help charities – if they attend a fundraising
+                  event, there will be TV cameras and reporters there, meaning
+                  that lots of people will find out about it. For example, in
+                  collaboration with the organisation ‘Kick it Out’, players get
+                  involved with campaigns and events to promote awareness of the
+                  problems caused by racism and other kinds of discrimination in
+                  the game. Plus, not to forget the high contribution
+                  footballers make in taxes.
+                </div>
+              </div>
+            </li>
+            <li class="pm-item">
+              <div class="pm-row" data-index="3">
+                <div class="pm-content odd">
+                  <span class="pm-text">Nurses save lives</span>
+                  <span class="pm-icon"><i class="fas fa-minus"></i></span>
+                </div>
+                <div class="pm-answer">
+                  Nurses work incredibly hard to keep their patients happy and
+                  healthy. New advances in technology mean that time is freed
+                  for nurses to prescribe drugs and deal with a wide range of
+                  diseases without needing a doctor’s approval. They also carry
+                  out research with patients to help us understand how to treat
+                  people better. Our growing population means that nurses have
+                  to see far more patients and deal with more complicated needs.
+                  You could argue that this life-saving work is more deserving
+                  of a high salary than a footballer’s. What do you think?
+                </div>
+              </div>
+            </li>
+           
+          </ul>
+        </div>
+      </section>
     </main>
 
     <!-- resource toolbar -->
     <div id="resourceToolbar" class="resource-toolbar d-none">
       <div class="d-flex justify-content-center align-items-center">
-        <div id="pageDots" class="d-flex gap-2 me-3">
-         
-        </div>
+        <div id="pageDots" class="d-flex gap-2 me-3"></div>
         <div id="scrollToTop" class="page-arrows d-none">
           <i class="fa fa-chevron-up" aria-hidden="true"></i>
         </div>
@@ -957,6 +1046,7 @@
           document.querySelector("#videoScreen"),
           document.querySelector("#questionList"),
           document.querySelector("#swipeQuestions"),
+          document.querySelector("#plusMinusQuestions"),
         ];
 
         const resourceToolbar = document.getElementById("resourceToolbar");
@@ -1016,6 +1106,55 @@
 
         scrollToTop.addEventListener("click", () => {
           sections[0].scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+
+    <!-- js for plus and minus question page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".pm-row");
+
+        items.forEach((row) => {
+          const content = row.querySelector(".pm-content");
+          const answer = row.querySelector(".pm-answer");
+          const icon = row.querySelector(".pm-icon i");
+
+          content.addEventListener("click", () => {
+            //  Close all other answers:
+            document.querySelectorAll(".pm-answer").forEach((a) => {
+              if (a !== answer) {
+                a.classList.remove("show");
+                a.style.maxHeight = null;
+              }
+            });
+
+            //  Reset all icons to “plus” or “minus” based on their even/odd status:
+            document.querySelectorAll(".pm-row").forEach((otherRow) => {
+              const otherIcon = otherRow.querySelector(".pm-icon i");
+              const otherContent = otherRow.querySelector(".pm-content");
+              const isEven = otherContent.classList.contains("even");
+              // even → plus, odd → minus
+              otherIcon.className = isEven ? "fas fa-plus" : "fas fa-minus";
+            });
+
+            // toggle 
+            const isOpen = answer.classList.contains("show");
+            if (isOpen) {
+              // Close 
+              answer.classList.remove("show");
+              answer.style.maxHeight = null;
+              // swap icon back to “+” or “–” depending on even/odd:
+              const isEven = content.classList.contains("even");
+              icon.className = isEven ? "fas fa-plus" : "fas fa-minus";
+            } else {
+              // Open 
+              answer.classList.add("show");
+              // set max-height so that it animates from zero → full height
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              icon.className = "fas fa-times";
+            }
+          });
         });
       });
     </script>
