@@ -811,8 +811,135 @@
                 </div>
               </div>
             </li>
-           
           </ul>
+        </div>
+      </section>
+
+      <!-- vote now page -->
+      <section
+        id="voteNow"
+        class="vote-now-section bg-blue-600 text-white text-center py-5"
+      >
+        <div class="container">
+          <div class="sub-header-section">
+            <h2 class="fw-bold">Should footballers earn more than nurses?</h2>
+          </div>
+          <div class="slide-cta d-flex justify-content-center mt-4 pt-1 mx-n4">
+            <a class="btn bg-blue-600 btn-vote" href="#" role="button"
+              >Vote now</a
+            >
+          </div>
+
+          
+          <ul class="additional-resources">
+            
+            <li id="read-more" class="top-level open">
+              <div class="add-res-title">
+                <span class="icon"></span>
+                <span class="title">Read More</span>
+                <span class="toggle-icon">×</span>
+              </div>
+              <ul class="inner-list" style="max-height: none">
+                <li>
+                  <a
+                    href=""
+                    class="add-res-item"
+                    data-qid="970"
+                    data-res-id="989"
+                    data-custom-col="#031d40"
+                    >Will the real gender gap please stand up?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/additional-resource/970/990"
+                    class="add-res-item"
+                    data-qid="970"
+                    data-res-id="990"
+                    data-custom-col="#031d40"
+                    >The Oxford undergraduate who was 'England's first football
+                    captain'</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="add-res-item"
+                    data-qid="970"
+                    data-res-id="994"
+                    data-custom-col="#031d40"
+                    >Soon nurses will pay for their education – should they
+                    demand higher wages?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="add-res-item"
+                    data-qid="970"
+                    data-res-id="1555"
+                    data-custom-col="#031d40"
+                    >Should footballers earn more than nurses? Take this
+                    further...</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            
+            <li id="watch-more" class="top-level">
+              <div class="add-res-title">
+                <span class="icon"></span>
+                <span class="title">Watch More</span>
+                <span class="toggle-icon">+</span>
+              </div>
+              <ul class="inner-list" style="max-height: 0">
+                <li>
+                  <a
+                    href=""
+                    class="add-res-item"
+                    data-qid="970"
+                    data-res-id="991"
+                    data-custom-col="#031d40"
+                    >Will we even need human footballers in the future?</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="add-res-item"
+                    data-qid="970"
+                    data-res-id="987"
+                    data-custom-col="#031d40"
+                    >Mind the pay gap</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            
+            <li id="do-more" class="top-level">
+              <div class="add-res-title">
+                <span class="icon"></span>
+                <span class="title">Do More</span>
+                <span class="toggle-icon">+</span>
+              </div>
+              <ul class="inner-list" style="max-height: 0">
+                <li>
+                  <a
+                    href=""
+                    class="add-res-item"
+                    data-qid="970"
+                    data-res-id="1157"
+                    data-custom-col="#031d40"
+                    >Will you score a hat-trick or an own goal? Test your
+                    knowledge of football through the ages.</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+         
         </div>
       </section>
     </main>
@@ -1047,6 +1174,7 @@
           document.querySelector("#questionList"),
           document.querySelector("#swipeQuestions"),
           document.querySelector("#plusMinusQuestions"),
+          document.querySelector("#voteNow"),
         ];
 
         const resourceToolbar = document.getElementById("resourceToolbar");
@@ -1138,21 +1266,76 @@
               otherIcon.className = isEven ? "fas fa-plus" : "fas fa-minus";
             });
 
-            // toggle 
+            // toggle
             const isOpen = answer.classList.contains("show");
             if (isOpen) {
-              // Close 
+              // Close
               answer.classList.remove("show");
               answer.style.maxHeight = null;
               // swap icon back to “+” or “–” depending on even/odd:
               const isEven = content.classList.contains("even");
               icon.className = isEven ? "fas fa-plus" : "fas fa-minus";
             } else {
-              // Open 
+              // Open
               answer.classList.add("show");
               // set max-height so that it animates from zero → full height
               answer.style.maxHeight = answer.scrollHeight + "px";
               icon.className = "fas fa-times";
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- js for vote now page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const topItems = document.querySelectorAll(
+          "ul.additional-resources > li.top-level"
+        );
+
+        topItems.forEach((item) => {
+          const titleBar = item.querySelector(".add-res-title");
+          const contentUL = item.querySelector(".inner-list");
+          const toggleIcon = item.querySelector(".toggle-icon");
+
+          //if <li> has class "open", let contentUL be fully expanded:
+          if (item.classList.contains("open")) {
+            contentUL.style.maxHeight = contentUL.scrollHeight + "px";
+            toggleIcon.textContent = "×";
+          } else {
+            contentUL.style.maxHeight = "0px";
+            toggleIcon.textContent = "+";
+          }
+
+          titleBar.addEventListener("click", () => {
+            //  Collapse all siblings
+            topItems.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove("open");
+                const otherUL = otherItem.querySelector(".inner-list");
+                const otherIcon = otherItem.querySelector(".toggle-icon");
+                otherUL.style.maxHeight = "0px"; // shrink
+                otherUL.style.opacity = "0"; // fade out
+                otherIcon.textContent = "+"; // plus sign
+              }
+            });
+
+            //  Toggle current one
+            const isOpen = item.classList.contains("open");
+            if (isOpen) {
+              // currently open → close it
+              item.classList.remove("open");
+              contentUL.style.maxHeight = "0px";
+              contentUL.style.opacity = "0";
+              toggleIcon.textContent = "+";
+            } else {
+              //  currently closed → open it
+              item.classList.add("open");
+              contentUL.style.opacity = "1";
+              // Set maxHeight so that it animates from zero → actual height
+              contentUL.style.maxHeight = contentUL.scrollHeight + "px";
+              toggleIcon.textContent = "×";
             }
           });
         });

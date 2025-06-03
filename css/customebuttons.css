@@ -125,4 +125,39 @@
 
 
 
+.slide-cta .btn-vote {
+  font-size: 28px;
+  color: #fff;
+  border-radius: 0;
+  border: 2px solid #fff;
+  min-width: 140px;
+  height: 60px;
+  width: 180px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0,0,5px; */
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.5);
+  transition: font-size 0.3s, height 0.3s, width 0.3s, line-height 0.3s,
+    background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+
+.slide-cta .btn-vote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.slide-cta .btn-vote:hover {
+  animation: swing 0.5s ease-in-out infinite;
+  background-color: #fff !important;
+  color: var(--clr-blue-600) !important;
+  border-color: var(--clr-blue-600);
+}
+
+
 
