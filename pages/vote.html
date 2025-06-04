@@ -375,7 +375,6 @@
         id="votePage"
         class="vote-page bg-blue-600 text-white text-center"
       >
-        
         <div class="container">
           <div class="sub-header-section">
             <h2 class="fw-bold">
@@ -434,6 +433,99 @@
           </div>
         </div>
       </section>
+
+      <section
+        id="comment"
+        class="comment-section bg-blue-600 text-white text-center d-none"
+      >
+        <div class="inner">
+          <h1>Comments</h1>
+
+          <div id="comment-container" class="field-container">
+            <p class="not-logged-in-message">
+              You need to <a href="/login">log in</a> to leave a comment.
+            </p>
+          </div>
+
+          <ul class="comments-list">
+            <li class="comment" data-commentid="1037" data-userid="11766">
+              <div class="comment-left">
+                <div class="avatar"></div>
+              </div>
+              <!--
+     -->
+              <div class="comment-right">
+                <div class="nickname">parks 6</div>
+                <div class="comment-text">
+                  The Government could step in, at least increase the wage for
+                  nurses, not good.
+                </div>
+                <div class="timing">
+                  <div class="date">3 Mar 2025</div>
+                  <div class="elapsedTime">3 months ago</div>
+                </div>
+                <div class="flagged">
+                  <span class="fade">This comment has been flagged</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="comment" data-commentid="1036" data-userid="11766">
+              <div class="comment-left">
+                <div class="avatar"></div>
+              </div>
+              <!--
+     -->
+              <div class="comment-right">
+                <div class="nickname">parks 6</div>
+                <div class="comment-text">
+                  The Government could step in, at least increase the wage for
+                  nurses, not good.
+                </div>
+                <div class="timing">
+                  <div class="date">3 Mar 2025</div>
+                  <div class="elapsedTime">3 months ago</div>
+                </div>
+                <div class="flagged">
+                  <span
+                    ><i class="fa fa-flag" aria-hidden="true"></i> Flag comment
+                    for review</span
+                  >
+                </div>
+              </div>
+            </li>
+
+            <li class="comment" data-commentid="1035" data-userid="11766">
+              <div class="comment-left">
+                <div class="avatar"></div>
+              </div>
+              <!--
+     -->
+              <div class="comment-right">
+                <div class="nickname">parks 6</div>
+                <div class="comment-text">
+                  The Government could step in, at least increase the wage for
+                  nurses, not good.
+                </div>
+                <div class="timing">
+                  <div class="date">3 Mar 2025</div>
+                  <div class="elapsedTime">3 months ago</div>
+                </div>
+                <div class="flagged">
+                  <span
+                    ><i class="fa fa-flag" aria-hidden="true"></i> Flag comment
+                    for review</span
+                  >
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <p class="not-logged-in-message">
+            <a href="/login">Log in</a> to see more comments.
+          </p>
+        </div>
+      </section>
     </main>
     <!-- Bootstrap JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
@@ -444,8 +536,9 @@
         const votePage = document.querySelector(".voting-options");
         const homepageLink = document.querySelector(".homepage-link");
         const moreLink = document.querySelector(".more");
+        const commentSection = document.getElementById("comment");
 
-        const votePercents = [18, 76, 4, 2]; // Simulated data
+        const votePercents = [18, 76, 4, 2]; // Example data
 
         options.forEach((option, index) => {
           option.addEventListener("click", () => {
@@ -453,19 +546,18 @@
 
             votePage.classList.add("voted");
 
-            // Show vote percentages visually
             options.forEach((opt, i) => {
               const overlay = opt.querySelector(".vote-overlay");
               const percent = votePercents[i];
               overlay.style.height = `${percent}%`;
 
-              // Show score
               const score = opt.querySelector(".score");
               score.style.display = "block";
             });
 
             homepageLink.classList.remove("d-none");
             moreLink.classList.remove("d-none");
+            commentSection.classList.remove("d-none"); //  Show the comment section
           });
         });
       });

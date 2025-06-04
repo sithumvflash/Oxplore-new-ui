@@ -20,24 +20,24 @@ strong,
   font-family: "Soleil", sans-serif;
 }
 
-
+body{
+    background: var(--clr-blue-600);
+}
 
 .vote-page {
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  padding: 100px 20px 60px;
   position: relative;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
 }
 
 .vote-page .container {
-  position: absolute;
+  /* position: absolute; */
   /* top: calc(50% + 40px);  */
-  top: calc(60% + 40px);
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* top: calc(60% + 40px); */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
   width: 100%;
   max-width: 900px;
   padding: 0 20px;
@@ -66,7 +66,6 @@ strong,
   max-width: 100%;
 }
 
-
 .voting-options {
   font-size: 0;
   display: table;
@@ -74,7 +73,6 @@ strong,
   margin: 20px auto;
   max-width: 600px;
   width: 100%;
-  
 }
 
 .option-row {
@@ -181,7 +179,7 @@ strong,
 .homepage-link .btn:hover {
   background: #ffffff;
   color: #ff007a;
-}   
+}
 
 .more {
   position: relative;
@@ -191,14 +189,202 @@ strong,
   cursor: pointer;
 }
 
-/* Responsive Fix */
-@media (max-width: 768px) {
-  .option-row {
-    display: block;
+
+
+
+
+.comment-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.comment-section .inner {
+    max-width: 600px;
+    padding: 10px 20px;
+    margin: auto;
+}
+
+
+.comment-section .inner h1 {
+    font-size: 43px;
+    line-height: 36px;
+    font-weight: bold;
+    text-align: left;
+
+}
+
+a{
+    color: #ff007a;
+}
+
+/* comment section styles */
+
+.comment-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.comment-section .inner {
+  max-width: 600px;
+  padding: 10px 20px;
+  margin: auto;
+}
+
+.comment-section h1 {
+  font-size: 43px;
+  line-height: 36px;
+  font-weight: bold;
+}
+
+.field-container {
+  text-align: right;
+  display: block;
+  line-height: 1.15;
+}
+
+.not-logged-in-message {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  text-align: center;
+}
+
+.comments-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment {
+  list-style: none;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 70px 10px 10px 70px;
+  display: flex;
+}
+
+.comment-left {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.avatar {
+  background-image: url(../images/xdefault.png.pagespeed.ic.QvLfU313Rw.webp);
+  width: 125px;
+  height: 125px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.comment-right {
+  width: calc(100% - 135px);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.nickname {
+  font-weight: bold;
+  text-align: left;
+}
+
+.comment-text {
+  font-size: 19px;
+  /* margin: 5px 0 15px; */
+  text-align: left;
+  line-height: 1.25;
+  min-height: 70px;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.timing {
+  display: none;
+  font-size: 12px;
+  width: calc(100% - 240px);
+}
+
+.flagged {
+  display: block;
+  font-size: 12px;
+  width: 100%;
+  text-align: right;
+}
+
+.fade {
+  opacity: 1 !important;
+  color: #ffffff !important;
+  cursor: default;
+}
+
+.fa-flag {
+  display: inline-block;
+  font: 14px / 1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.vote-page,
+.comment-section {
+  min-height: auto !important;
+}
+
+/* mobile responsiveness */
+
+.vote-page .sub-header-section h2 {
+  font-size: clamp(28px, 6vw, 43px);
+  line-height: clamp(32px, 7vw, 40px);
+  padding: 0 10px;
+}
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (max-width: 992px) {
+  .score {
+    font-size: 20pt;
+    width: 100px;
+    left: auto !important;
+    right: auto !important;
+    background: none;
+    padding: 0;
+    text-align: center;
+    bottom: -20px;
   }
+
   .option {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .vote-page .sub-header-section h2 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .vote-page,
+  .comment-section {
+    padding: 40px 10px;
   }
 }
