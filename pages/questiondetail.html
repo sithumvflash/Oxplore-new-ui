@@ -725,6 +725,106 @@
         </div>
       </section>
 
+      <!-- image slider page content goes here -->
+      <section
+      id="imageSliderPage"
+        class="image-gallery-resource cover scroll-point theme_green faux-active dot-active bg-theme-blue text-white"
+      >
+        <div class="ox-slider">
+          <div class="slide active">
+            <div
+              class="img"
+              style="
+                background-image: url('../images/1280px-Interior_in_Halden_prison.jpg');
+              "
+            ></div>
+            <div class="caption">
+              <p>
+                The Panopticon was designed by philosopher, Jeremy Bentham
+                (1748-1832). It allows all inmates to be observed by a single
+                watchman without them knowing.
+              </p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div
+              class="img"
+              style="
+                background-image: url('../images/1280px-Justizzentrum_Leoben3.jpg');
+              "
+            ></div>
+            <div class="caption">
+              <p>
+                In a rotary jail, cells could be moved in a carousel fashion
+                using a crank - allowing only one cell at a time to be
+                accessible from the single opening per level.
+              </p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div
+              class="img"
+              style="
+                background-image: url('../images/Alcatraz_Island_photo_D_Ramey_Logan.jpg');
+              "
+            ></div>
+            <div class="caption">
+              <p>
+                Due to its isolation from the mainland by cold, treacherous
+                waters, Alcatraz Island drew upon nature's design to help house
+                prisoners.
+              </p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div
+              class="img"
+              style="background-image: url('../images/Panopticonresized.png')"
+            ></div>
+            <div class="caption">
+              <p>
+                This picture shows an overcrowded prison in California: a
+                serious problem worldwide.
+              </p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div
+              class="img"
+              style="background-image: url('../images//Prison_crowded.jpg')"
+            ></div>
+            <div class="caption">
+              <p>
+                Halden Prison (Norway) was designed to simulate a village so
+                that the prisoners can consider themselves part of society.
+              </p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div
+              class="img"
+              style="background-image: url('../images/rotaryresized.png')"
+            ></div>
+            <div class="caption">
+              <p>
+                Justizzentrum is a court and prison complex in Austria. It
+                operates under the principle: "All persons deprived of their
+                liberty shall be treated with humanity and with respect for the
+                inherent dignity of the human person."
+              </p>
+            </div>
+          </div>
+
+          <div class="arrow left"></div>
+          <div class="arrow right"></div>
+        </div>
+      </section>
+
       <!-- plus and minus question page -->
       <section
         id="plusMinusQuestions"
@@ -816,6 +916,7 @@
       </section>
 
       <!-- vote now page -->
+
       <section
         id="voteNow"
         class="vote-now-section bg-blue-600 text-white text-center py-5"
@@ -825,14 +926,15 @@
             <h2 class="fw-bold">Should footballers earn more than nurses?</h2>
           </div>
           <div class="slide-cta d-flex justify-content-center mt-4 pt-1 mx-n4">
-            <a class="btn bg-blue-600 btn-vote" href="../pages/vote.html" role="button"
+            <a
+              class="btn bg-blue-600 btn-vote"
+              href="../pages/vote.html"
+              role="button"
               >Vote now</a
             >
           </div>
 
-          
           <ul class="additional-resources">
-            
             <li id="read-more" class="top-level">
               <div class="add-res-title">
                 <span class="icon"></span>
@@ -886,7 +988,6 @@
               </ul>
             </li>
 
-            
             <li id="watch-more" class="top-level">
               <div class="add-res-title">
                 <span class="icon"></span>
@@ -917,7 +1018,6 @@
               </ul>
             </li>
 
-            
             <li id="do-more" class="top-level">
               <div class="add-res-title">
                 <span class="icon"></span>
@@ -939,7 +1039,6 @@
               </ul>
             </li>
           </ul>
-         
         </div>
       </section>
     </main>
@@ -1339,6 +1438,34 @@
             }
           });
         });
+      });
+    </script>
+
+    <!-- js for image slider page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".ox-slider .slide");
+        const leftArrow = document.querySelector(".ox-slider .arrow.left");
+        const rightArrow = document.querySelector(".ox-slider .arrow.right");
+        let currentIndex = 0;
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+          });
+        }
+
+        leftArrow.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(currentIndex);
+        });
+
+        rightArrow.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+        });
+
+        showSlide(currentIndex);
       });
     </script>
   </body>

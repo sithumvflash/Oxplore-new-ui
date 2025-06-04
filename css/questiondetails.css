@@ -570,7 +570,7 @@ strong,
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
 }
 
 .swipequestions-section .container {
@@ -608,7 +608,7 @@ strong,
 }
 
 .question-slide {
-  position: relative; 
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -725,12 +725,10 @@ strong,
 }
 
 .answers-list li {
-  font-size: 21px;  
+  font-size: 21px;
 }
 
-
 /* plus and minus page styles */
-
 
 .plus-minus-qsection {
   height: 100vh;
@@ -774,10 +772,6 @@ strong,
   max-width: 100%;
 }
 
-
-
-
-
 .plus-minus-list {
   list-style: none;
   padding: 0;
@@ -798,13 +792,12 @@ strong,
   cursor: pointer;
 }
 
-
 .plus-minus-list .pm-content.even {
-  flex-direction: row !important; 
+  flex-direction: row !important;
 }
 
 .plus-minus-list .pm-content.odd {
-  flex-direction: row-reverse !important; 
+  flex-direction: row-reverse !important;
 }
 
 .pm-icon {
@@ -819,7 +812,6 @@ strong,
   flex-shrink: 0;
 }
 
-
 .pm-answer {
   max-height: 0;
   overflow: hidden;
@@ -827,7 +819,7 @@ strong,
   /* Animate only max-height and opacity */
   transition: max-height 0.5s ease, opacity 0.5s ease;
   font-size: 16px;
-  font-weight: 300 !important;    
+  font-weight: 300 !important;
   padding: 0 0 15px 0;
   color: #fff;
   line-height: 1.6;
@@ -838,13 +830,11 @@ strong,
   opacity: 1;
 }
 
-
 .pm-text,
 .pm-icon {
   display: inline-flex;
   align-items: center;
 }
-
 
 /* vote now page styles */
 
@@ -890,16 +880,12 @@ strong,
   max-width: 100%;
 }
 
-
-
-
 ul.additional-resources {
   list-style: none;
   padding: 0;
-  margin: 40px 0 0;              
+  margin: 40px 0 0;
   font-family: "soleil", sans-serif;
 }
-
 
 ul.additional-resources > li.top-level {
   list-style: none;
@@ -909,15 +895,12 @@ ul.additional-resources > li.top-level {
   position: relative;
 }
 
-
 ul.additional-resources .add-res-title {
   display: block;
   position: relative;
   cursor: pointer;
   padding-right: 35px;
   align-content: center;
-          
-  
 }
 
 ul.additional-resources .add-res-title .icon {
@@ -930,7 +913,6 @@ ul.additional-resources .add-res-title .icon {
   vertical-align: middle;
 }
 
-
 #read-more .add-res-title .icon {
   background-image: url("../images/sketch-books.svg");
 }
@@ -941,7 +923,6 @@ ul.additional-resources .add-res-title .icon {
   background-image: url("../images/sketch-bulb.svg");
 }
 
-
 ul.additional-resources .add-res-title .title {
   display: inline-block;
   font-size: 21px;
@@ -950,7 +931,6 @@ ul.additional-resources .add-res-title .title {
   margin-left: 5px;
   color: #fff;
 }
-
 
 ul.additional-resources .add-res-title .toggle-icon {
   position: absolute;
@@ -962,20 +942,17 @@ ul.additional-resources .add-res-title .toggle-icon {
   color: #fff;
 }
 
-
 ul.additional-resources .inner-list {
   padding: 0;
   margin: 0;
   overflow: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
-  opacity: 0;                    
+  opacity: 0;
 }
-
 
 ul.additional-resources li.top-level.open > .inner-list {
   opacity: 1;
 }
-
 
 ul.additional-resources .inner-list > li {
   list-style-type: disc;
@@ -985,7 +962,6 @@ ul.additional-resources .inner-list > li {
   margin-top: 10px;
   font-size: 18px;
 }
-
 
 ul.additional-resources .inner-list > li > a.add-res-item {
   display: block;
@@ -1003,7 +979,6 @@ ul.additional-resources .inner-list > li > a.add-res-item:hover {
   color: #fff;
 }
 
-
 #voteNow .additional-resources {
   max-width: 600px;
   margin: 40px auto 60px auto;
@@ -1017,4 +992,153 @@ ul.additional-resources .inner-list > li > a.add-res-item:hover {
   }
 }
 
+/* image slider styles */
 
+.image-gallery-resource {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--theme-blue, #2277b4);
+  overflow: hidden;
+}
+
+.ox-slider {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.ox-slider .slide {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.ox-slider .slide.active {
+  display: block;
+  z-index: 1;
+}
+
+.ox-slider .img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Keyframes for a single rotation + fade-in */
+@keyframes captionRotateIn {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0.9;
+  }
+}
+
+/* Base (hidden) state of every caption */
+.ox-slider .slide .caption {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  /* start off-centered/rotated/invisible */
+  transform: translate(-50%, -50%) rotate(360deg);
+  opacity: 0;
+  max-width: 600px;
+  width: calc(100% - 80px);
+  padding: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  white-space: normal;
+  background-color: var(--theme-blue, #2277b4); 
+  color: #fff;
+}
+
+/*“Visible” state: center + run rotation animation */
+.ox-slider .slide.active .caption {
+  animation: captionRotateIn 0.6s ease-out forwards;
+}
+
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.ox-slider .slide .caption p {
+    margin: 0;
+}
+
+.ox-slider .slide .attribution {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    line-height: 1.5;
+    white-space: normal;
+    background: rgba(0, 0, 0, .25);
+}
+
+.ghost {
+    display: none !important;
+}
+
+
+.ox-slider .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 110px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.ox-slider .arrow:hover{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ox-slider .arrow.left {
+  left: 0;
+  background-image: url("../images/");
+  background-position: 10px center;
+  border-top-right-radius: 90px;
+  border-bottom-right-radius: 90px;
+}
+
+.ox-slider .arrow.right {
+  right: 0;
+  background-image: url("../images/");
+  background-position: 25px center;
+  border-top-left-radius: 90px;
+  border-bottom-left-radius: 90px;
+}
+
+@media (max-width: 768px) {
+  .ox-slider .caption {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+}
