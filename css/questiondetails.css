@@ -1010,5 +1010,12 @@ ul.additional-resources .inner-list > li > a.add-res-item:hover {
 }
 
 
+@media (max-width: 600px) {
+  #voteNow ul.additional-resources .inner-list > li {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
 
 
