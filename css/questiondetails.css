@@ -785,7 +785,7 @@ strong,
 }
 
 .pm-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .plus-minus-list .pm-content {
@@ -860,7 +860,7 @@ strong,
 .vote-now-section .container {
   position: absolute;
   /* top: calc(50% + 40px);  */
-  top: calc(40% + 40px);
+  top: calc(50% + 40px);
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -989,7 +989,7 @@ ul.additional-resources .inner-list > li {
 
 ul.additional-resources .inner-list > li > a.add-res-item {
   display: block;
-  padding: 6px 12px;
+  padding: 3px 6px;
   color: #031d40;
   background-color: #fff;
   border: 2px solid #031d40;
@@ -1005,7 +1005,8 @@ ul.additional-resources .inner-list > li > a.add-res-item:hover {
 
 
 #voteNow .additional-resources {
-  margin-bottom: 60px;
+  max-width: 600px;
+  margin: 40px auto 60px auto;
 }
 
 
