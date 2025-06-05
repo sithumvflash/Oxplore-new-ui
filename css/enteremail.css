@@ -38,10 +38,10 @@ strong,
   }
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
-
 
 body {
   background: var(--bg-theme-red);
@@ -55,7 +55,6 @@ body {
   text-align: center;
   padding: 0 00px;
 }
-
 
 body {
   padding-top: 0; /* JS will set this dynamically */
@@ -294,3 +293,28 @@ input:-moz-placeholder {
     line-height: 45px;
   }
 }
+
+.input-container .new-paragraph {
+  font-size: 21px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.input-container a {
+  background-color: #ff007a;
+  color: #ffffff;
+  border: 1px solid #ff007a;
+  text-decoration: none;
+}
+
+.input-container a:hover{
+    background-color: var(--clr-theme-purple);
+    border-color: #ff007a;
+    
+}
+
+
