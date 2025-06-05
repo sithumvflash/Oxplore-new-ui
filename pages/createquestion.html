@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="../fonts/stylesheet.css" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/custom.css" />
-    <link rel="stylesheet" href="../css/bigquestion.css" />
-    <title>Big Question</title>
+    <link rel="stylesheet" href="../css/createquestion.css" />
+    <title>Create Question</title>
   </head>
   <body>
     <div class="nav-wrapper">
@@ -371,18 +371,28 @@
 
     <main>
       <section
-        id="bigQuestion"
-        class="big-question-page bg-theme-pink text-white text-center"
+        id="createQuestion"
+        class="create-question-page bg-theme-pink text-white text-center"
       >
         <div class="container">
           <div class="input-container">
             <div class="rapper">
-              <h1>Want us to answer your big question?</h1>
-              <textarea
-                id="question"
-                placeholder="Hello. Type your Big Question here. Why do you find it interesting? What would you want to know about?"
-              ></textarea>
-              <a href="../pages/createquestion.html" class="btn cloak" id="submitBtn">Submit</a>
+              <h1>Thank you for submitting your big question.</h1>
+              <h2>Would you like to follow your big question suggestion?</h2>
+              <form>
+                <a class="btn yes-over">
+                  <p class="big">Yes</p>
+                  <p>I am 13 or over</p>
+                </a>
+                <a href="#" class="btn yes-under">
+                  <p class="big">Yes</p>
+                  <p>I am under 13</p>
+                </a>
+                <a href="#" class="btn no-go submit">
+                  <p class="big">Nope</p>
+                  <p>Thanks anyway</p>
+                </a>
+              </form>
             </div>
           </div>
         </div>
@@ -390,18 +400,5 @@
     </main>
     <!-- Bootstrap JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-      const textarea = document.getElementById("question");
-      const submitBtn = document.getElementById("submitBtn");
-
-      textarea.addEventListener("input", function () {
-        if (textarea.value.trim().length > 0) {
-          submitBtn.classList.remove("cloak");
-        } else {
-          submitBtn.classList.add("cloak");
-        }
-      });
-    </script>
   </body>
 </html>

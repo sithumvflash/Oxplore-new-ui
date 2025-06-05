@@ -1,0 +1,160 @@
+p,
+li,
+a,
+span,
+label,
+input,
+button {
+  font-family: "Soleil Bk", sans-serif;
+}
+
+/* 4. Bold weight — headings, strong, .font-bold utility */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+.font-bold {
+  font-family: "Soleil", sans-serif;
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(7deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+body {
+  background: var(--bg-theme-pink);
+}
+
+.create-question-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff007a;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.input-container {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #fff;
+  padding: 20px;
+}
+
+.input-container h1 {
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.input-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+form {
+  text-align: center;
+  color: #fff;
+  display: block;
+  margin-top: 0em;
+}
+
+/* Shared styles for all three buttons */
+.create-question-page .btn.yes-over,
+.create-question-page .btn.yes-under,
+.create-question-page .btn.no-go {
+  display: inline-block;
+  width: 200px;
+  margin: 0 10px;
+  padding: 0 2 5px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff007a;
+  border: 2px solid #fff;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 0;
+  line-height: 1.2;
+}
+
+.create-question-page .btn:hover {
+  color:#ff007a;
+  background-color: #fff;
+  animation: swing 0.5s ease-in-out infinite;
+}
+
+form p.big {
+  font-weight: 800;
+  font-size: 36px;
+  margin: 0;
+}
+
+form p {
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Tablet view */
+@media (max-width: 991px) {
+  .create-question-page .btn.yes-over,
+  .create-question-page .btn.yes-under,
+  .create-question-page .btn.no-go {
+    width: 170px;
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  form p.big {
+    font-size: 26px;
+  }
+
+  form p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .create-question-page .btn.yes-over,
+  .create-question-page .btn.yes-under,
+  .create-question-page .btn.no-go {
+    max-width: 170px;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  form p.big {
+    font-size: 22px;
+  }
+
+  form p {
+    font-size: 14px;
+  }
+}
