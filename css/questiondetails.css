@@ -1122,7 +1122,7 @@ p {
 
 .ox-slider .arrow.left {
   left: 0;
-  background-image: url("../images/");
+  background-image: url("../images/left-arrow.svg");
   background-position: 10px center;
   border-top-right-radius: 90px;
   border-bottom-right-radius: 90px;
@@ -1130,7 +1130,7 @@ p {
 
 .ox-slider .arrow.right {
   right: 0;
-  background-image: url("../images/");
+  background-image: url("../images/right-arrow.svg");
   background-position: 25px center;
   border-top-left-radius: 90px;
   border-bottom-left-radius: 90px;
