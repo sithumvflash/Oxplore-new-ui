@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="stylesheet" href="../css/enteremail.css" />
+    <title>Enter Your Email</title>
+  </head>
+  <body>
+    <div class="nav-wrapper">
+      <nav
+        id="topnav"
+        class="navigation navbar fixed-top shadow navbar-expand-lg bg-neutral-100 navigation__top py-4 py-lg-0"
+      >
+        <div class="container">
+          <div class="row w-100">
+            <div class="col d-flex">
+              <div
+                class="collapse navbar-collapse w-auto"
+                id="navbarTogglerDemo02"
+              >
+                <ul class="navbar-nav main-menu mr-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="/about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-uppercase"
+                      href="/create-big-question"
+                      >What's your big question?</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="offcanvas-main">
+                <button type="button" class="open-btn">Menu</button>
+                <div class="offcanvas" id="offcanvasMenu">
+                  <span class="close-btn">×</span>
+                  <ul class="offcanvas-nav text-uppercase">
+                    <li><a href="/login">Log in</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/events">about</a></li>
+                    <li><a href="/events">what's your big question?</a></li>
+                    <li><a href="/events">what's new</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/about">Contact Us</a></li>
+                  </ul>
+                  <div class="oxford-logo"></div>
+                </div>
+
+                <div class="overlay" id="overlay"></div>
+              </div>
+            </div>
+            <div class="col text-center">
+              <a class="brand-logo-ox p-0" href="/">
+                <svg
+                  class="logo"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="516.5px"
+                  height="134.3px"
+                  viewBox="0 0 516.5 134.3"
+                >
+                  <!-- SVG paths from original code -->
+                  <style>
+                    .r {
+                      fill: #4abfdb;
+                    }
+                    .x {
+                      fill: #b11780;
+                    }
+                    .e1 {
+                      fill: none;
+                      stroke: #e6007e;
+                      stroke-width: 14.9;
+                      stroke-miterlimit: 10;
+                    }
+                    .e2 {
+                      fill: none;
+                      stroke: #e6007e;
+                      stroke-width: 18;
+                      stroke-miterlimit: 10;
+                    }
+                    .l1 {
+                      fill: none;
+                      stroke: #eeaf09;
+                      stroke-width: 18;
+                      stroke-miterlimit: 10;
+                    }
+                    .l2 {
+                      fill: none;
+                      stroke: #eeaf09;
+                      stroke-width: 14.9;
+                      stroke-miterlimit: 10;
+                    }
+                    .other_o {
+                      fill: none;
+                      stroke: #92c022;
+                      stroke-width: 16;
+                      stroke-miterlimit: 10;
+                      animation: o_animation 0.5s linear;
+                      animation-delay: 0.3s;
+                    }
+                    .o {
+                      fill: none;
+                      stroke: #7f217f;
+                      stroke-width: 16;
+                      stroke-miterlimit: 10;
+                      animation: o_animation 0.5s linear;
+                      animation-delay: 0.5s;
+                    }
+                    .st8 {
+                      fill: none;
+                      stroke: #e7297a;
+                      stroke-width: 11.1659;
+                      stroke-miterlimit: 10;
+                    }
+                    .st9 {
+                      fill: none;
+                      stroke: #e7297a;
+                      stroke-width: 14.99;
+                      stroke-miterlimit: 10;
+                    }
+                    .st10 {
+                      fill: none;
+                      stroke: #e7297a;
+                      stroke-width: 16.063;
+                      stroke-miterlimit: 10;
+                    }
+                    .r_base {
+                      fill: none;
+                      stroke: #4abfdb;
+                      stroke-width: 18;
+                      stroke-miterlimit: 10;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      class="r"
+                      d="M411.1,35.2h4.8c7.2,0,12.6-2.6,12.6-8.6c0-5.4-4.2-9.1-10.4-9.1h-6.9l0-14.9h7.3c12.8,0,29.1,6.6,29.1,23.7 c0,11.7-7.7,18.3-16.1,21.7c6.9,9.6,18.2,25.3,23.4,32.4h-22.4l-20.6-30.3h-0.8V35.2z"
+                    />
+                    <g class="x">
+                      <path
+                        class="x_l"
+                        d="M118.9,54.4l-17.7,25H78.8l28.7-39l12.2-14.9l16.9-23.9H159l-27.9,37.9"
+                      />
+                      <path
+                        class="x_r"
+                        d="M107.4,40.4L79.6,1.6h23.7l16.4,23.9l11.4,14l28.8,39.9h-23.7l-17.3-25L107.4,40.4z"
+                      />
+                    </g>
+                    <line
+                      class="e1"
+                      x1="516.5"
+                      y1="10.1"
+                      x2="474.4"
+                      y2="10.1"
+                    />
+                    <line class="e1" x1="516.5" y1="73" x2="474.4" y2="73" />
+                    <line
+                      class="e1"
+                      x1="516.5"
+                      y1="40.4"
+                      x2="474.4"
+                      y2="40.4"
+                    />
+                    <line class="e2" x1="474.4" y1="80.4" x2="474.4" y2="2.6" />
+                    <g class="l">
+                      <line
+                        class="l1"
+                        x1="254.4"
+                        y1="2.7"
+                        x2="254.4"
+                        y2="80.5"
+                      />
+                      <line class="l2" x1="254.4" y1="73" x2="294.5" y2="73" />
+                    </g>
+                    <path
+                      class="other_o"
+                      d="M371.9,40.5c0,17.9-14.4,32.5-32.2,32.5c-17.8,0-32.2-14.5-32.2-32.5S321.9,8,339.7,8c0.2,0,0.4,0,0.6,0 C357.8,8.3,371.9,22.8,371.9,40.5z"
+                    />
+                    <path
+                      class="o"
+                      d="M72.4,40.5C72.4,58.4,58,73,40.2,73S8,58.4,8,40.5S22.4,8,40.2,8c0.2,0,0.4,0,0.6,0 C58.3,8.3,72.4,22.8,72.4,40.5z"
+                    />
+                    <g class="p">
+                      <circle class="st8" cx="176.9" cy="123.2" r="5.6" />
+                      <line
+                        class="st9"
+                        x1="176.6"
+                        y1="98.4"
+                        x2="176.6"
+                        y2="62.5"
+                      />
+                      <path
+                        class="st10"
+                        d="M169.2,9.7h23.7c16.6,0,30.7,13,31.1,29.6c0.4,17.2-13.3,31.2-30.4,31.2h-9.4"
+                      />
+                    </g>
+                    <line
+                      class="r_base"
+                      x1="402.1"
+                      y1="80.4"
+                      x2="402.1"
+                      y2="2.6"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <div
+                class="d-flex justify-content-end align-items-center right-navs"
+              >
+                <ul class="social-icons m-0 p-0 mb-lg-0">
+                  <li class="dropdown">
+                    <a
+                      id="twitterDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      href="#"
+                    >
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu social-dropdown"
+                      aria-labelledby="twitterDropdown"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="http://twitter.com/letsoxplore"
+                          target="_blank"
+                          >Follow</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="https://twitter.com/intent/tweet?text=Check+out+Oxplore%2C+the+home+of+big+questions&amp;url=https%3A%2F%2Foxplore.org%2Fquestion-detail%2Fis-fantasy-better-than-real-life&amp;via=letsoxplore&amp;hashtags=oxplore,discover"
+                          >Share</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a
+                      id="facebookDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      href="#"
+                    >
+                      <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu social-dropdown"
+                      aria-labelledby="facebookDropdown"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="http://facebook.com/letsoxplore"
+                          target="_blank"
+                          >Follow</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="http://facebook.com/sharer/sharer.php?u=https%3A%2F%2Foxplore.org%2Fquestion-detail%2Fis-fantasy-better-than-real-life"
+                          target="_blank"
+                          >Share</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a
+                      id="instagramDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      href="#"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu social-dropdown"
+                      aria-labelledby="instagramDropdown"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="http://instagram.com/letsoxplore"
+                          target="_blank"
+                          >Follow</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="navbar-nav dropmenu navbar-right mb-2 mb-lg-0">
+                  <li class="dropdown text-uppercase m-0">
+                    <a
+                      class="nav-link dropdown-toggle p-0"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Log in / register
+                    </a>
+                    <ul
+                      class="dropdown-menu text-uppercase"
+                      aria-labelledby="navbarDropdown"
+                    >
+                      <li><a class="dropdown-item" href="/login">Log in</a></li>
+                      <li>
+                        <a class="dropdown-item" href="/register">Register</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="/events">what's new</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="/events">Events</a>
+                      </li>
+
+                      <li>
+                        <a class="dropdown-item" href="/about">Contact Us</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="/about">Teachers</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"
+                  ><i class="fas fa-bars"></i
+                ></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+      <section
+        id="createQuestionEnterEmail"
+        class="create-question-email-enter bg-theme-red text-white text-center"
+      >
+        <div class="container">
+          <div class="input-container">
+            <div class="rapper">
+              <div class="number">1/4</div>
+              <h1>
+                If you would like us to let you know if your Big Question is
+                selected to be added to Oxplore, and to give you the opportunity
+                to contribute content about your Big Question to Oxplore, we
+                will need your email address to contact you.
+              </h1>
+              <h2>
+                If you are happy for us to contact you for these purposes,
+                please provide an email address and tick the box below to
+                confirm this.
+              </h2>
+
+              <input placeholder="Enter your email" type="text" />
+
+              <div class="checkbox-container">
+                <input
+                  id="email-confirm"
+                  type="checkbox"
+                  data-gtm-form-interact-field-id="0"
+                />
+                <label for="email-confirm">
+                  <span class="faux-checkbox"
+                    >I confirm that I am happy for you to use the email address
+                    I have provided to contact me about my Big Question for the
+                    purposes described above.</span
+                  >
+                </label>
+              </div>
+
+              <a href="#" class="btn"> Next </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      //  dynamically calculate navbar height
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.getElementById("topnav");
+        const navbarHeight = navbar.offsetHeight;
+        document.body.style.paddingTop = `${navbarHeight}px`;
+      });
+    </script>
+  </body>
+</html>
