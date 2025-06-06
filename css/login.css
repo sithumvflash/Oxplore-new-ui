@@ -1,0 +1,196 @@
+p,
+li,
+a,
+span,
+label,
+input,
+button {
+  font-family: "Soleil Bk", sans-serif;
+}
+
+/* 4. Bold weight — headings, strong, .font-bold utility */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+.font-bold {
+  font-family: "Soleil", sans-serif;
+}
+
+body {
+  background-color: var(--clr-theme-maroon);
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(7deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* .login-main {
+  min-height: 100vh;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0 00px;
+} */
+
+body {
+  padding-top: 0; /* JS will set this dynamically */
+}
+
+.login-main .table-container {
+  display: table;
+  width: 100%;
+  height: calc(100vh - 71px);
+}
+
+.login-main .table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.login-main .inner {
+  max-width: 930px;
+  padding: 60px 20px;
+  margin: auto;
+  text-align: center;
+  color: #ffffff;
+  font-family: "soleil", sans-serif;
+}
+
+.login-main h1 {
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 40px;
+  margin: 0.67em 0;
+}
+
+.login-main .field-container {
+  position: relative;
+  max-width: 500px;
+  margin: 25px auto;
+  text-align: left;
+}
+
+.field-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.field-container input {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  text-align: left;
+  padding: 15px;
+  font-weight: 100 !important;
+  font-family: "soleil", sans-serif;
+  font-size: 20px;
+  width: 100%;
+  max-width: 500px;
+  color: #ffffff;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.login-main .error {
+  display: block;
+  margin-top: 8px;
+  text-align: right;
+}
+
+.error .fa {
+  display: inline-block;
+  font: normal normal normal 14px / 1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  
+}
+
+.login-main .btn {
+  display: inline-block;
+  color: #ffffff;
+  box-sizing: content-box;
+  min-width: 100px;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-align: center;
+}
+
+.login-main .submit {
+    font-size: 28px;
+    box-shadow: 7px 7px 4px 0px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transform: rotate(0deg);
+    line-height: 55px;
+    transition: all 0.3s;
+    margin: 10px;
+    padding: 5px 0;
+    background-color: #ff007a;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    width: 290px;
+    border-radius: 0;
+}
+
+.login-main .submit:hover{
+    color: #ff007a;
+    background-color: #ffffff;
+    border-color: #ff007a;
+    animation: swing 0.5s ease-in-out infinite;
+}
+
+
+
+.login-main .tools{
+    display: block;
+}
+
+.login-main .tools a{
+    text-decoration: none;
+        background-color: transparent;
+        color: #ffffff;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.login-main .tools a:hover{
+    text-decoration: underline;
+}
+
+
+@media (max-width: 576px) {
+  .login-main .submit {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
