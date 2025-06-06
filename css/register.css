@@ -1,0 +1,173 @@
+p,
+li,
+a,
+span,
+label,
+input,
+button {
+  font-family: "Soleil Bk", sans-serif;
+}
+
+/* 4. Bold weight — headings, strong, .font-bold utility */
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+.font-bold {
+  font-family: "Soleil", sans-serif;
+} */
+
+body {
+  background-color: var(--clr-theme-purple);
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(7deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* .login-main {
+  min-height: 100vh;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0 00px;
+} */
+
+body {
+  padding-top: 0; /* JS will set this dynamically */
+}
+
+.register-page .table-container {
+  display: table;
+  width: 100%;
+  height: calc(100vh - 71px);
+}
+
+.register-page .table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.register-page .inner {
+  max-width: 930px;
+  padding: 60px 20px;
+  margin: auto;
+  text-align: center;
+  color: #ffffff;
+  font-family: "soleil", sans-serif;
+}
+
+.register-page h1 {
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 40px;
+  margin: 0.67em 0;
+}
+
+.register-page h2 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: normal;
+  line-height: 32px;
+}
+
+.register-page .legal-scroller h2 {
+  font-size: 20px;
+  text-align: left;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.register-page .legal-scroller p{
+    line-height: 1.5;
+    font-weight: 300 !important;
+}
+
+.register-page .legal-scroller a{
+    color: #ff007a;
+    text-decoration: underline;
+}
+
+.register-page .legal-scroller{
+    max-height: 300px;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: justify;
+    padding: 0px 30px;
+    margin-bottom: 1.5em;
+}
+
+
+.register-page .btn {
+  display: inline-block;
+  color: #ffffff !important;
+  box-sizing: content-box;
+  min-width: 100px;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-align: center;
+}
+
+.register-page .submit,
+.register-page .cancel {
+  font-size: 28px;
+  box-shadow: 7px 7px 4px 0px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  transform: rotate(0deg);
+  line-height: 55px;
+  transition: all 0.3s;
+  margin: 10px;
+  padding: 5px 0;
+  background-color: #ff007a;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  width: 290px;
+  border-radius: 0;
+}
+
+.register-page .submit:hover,
+.register-page .cancel:hover {
+  color: #ff007a !important;
+  background-color: #ffffff;
+  border-color: #ff007a;
+  animation: swing 0.5s ease-in-out infinite;
+}
+
+
+@media (max-width: 576px) {
+  .register-page .submit,
+  .register-page .cancel {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
