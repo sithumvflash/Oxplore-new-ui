@@ -41,6 +41,7 @@ strong,
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 .about-section {
@@ -70,12 +71,8 @@ body {
   padding: 30px 20px;
   margin: 0 auto 25px auto;
   text-align: center;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
+ 
 }
 
 .about-header h1 {
@@ -170,3 +167,23 @@ iframe {
 
 
 
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-member img {
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .team-member-content {
+    text-align: left;
+    padding: 0 10px;
+  }
+
+  
+}
