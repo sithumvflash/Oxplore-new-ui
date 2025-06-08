@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="../fonts/stylesheet.css" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/custom.css" />
-    <link rel="stylesheet" href="../css/enteremail.css" />
-    <title>Enter Your Email</title>
+    <link rel="stylesheet" href="../css/dobregister.css" />
+    <title>Date of Birth</title>
   </head>
   <body>
     <div class="nav-wrapper">
@@ -370,63 +370,82 @@
     </div>
 
     <main>
-      <section
-        id="createQuestionEnterEmail"
-        class="create-question-email-enter bg-theme-red text-white text-center"
-      >
+      <section id="dobRegister" class="dob-register text-white">
         <div class="container">
-          <div class="input-container">
-            <div class="rapper">
-              <div class="number">1/4</div>
-              <h1>
-                If you would like us to let you know if your Big Question is
-                selected to be added to Oxplore, and to give you the opportunity
-                to contribute content about your Big Question to Oxplore, we
-                will need your email address to contact you.
-              </h1>
-              <h2>
-                If you are happy for us to contact you for these purposes,
-                please provide an email address and tick the box below to
-                confirm this.
-              </h2>
+          <div class="table-container">
+            <div class="table-cell">
+              <div class="inner">
+                <h1>
+                  Please tell us a bit more about you. We'll use this
+                  information to understand more about the types of people on
+                  Oxplore, but we won't share it with anyone outside of the
+                  University of Oxford.
+                </h1>
 
-              <input placeholder="Enter your email" type="text" />
+                <div class="field-container">
+                  <label for="school-name">Your school name</label>
+                  <input id="school-name" class="school-name" type="text" />
+                  <ul class="school-names-list"></ul>
+                </div>
 
-              <div class="checkbox-container">
-                <input
-                  id="email-confirm"
-                  type="checkbox"
-                  data-gtm-form-interact-field-id="0"
-                />
-                <label for="email-confirm">
-                  <span class="faux-checkbox"
-                    >I confirm that I am happy for you to use the email address
-                    I have provided to contact me about my Big Question for the
-                    purposes described above.</span
-                  >
-                </label>
+                <div class="field-container">
+                  <label for="home-postcode">Your home postcode</label>
+                  <input id="home-postcode" type="text" />
+                </div>
+
+                <div class="field-container">
+                  <label for="dob-d">Your date of birth</label>
+                  <input
+                    id="dob-d"
+                    class="dob"
+                    maxlength="2"
+                    type="text"
+                    placeholder="dd"
+                  />
+                  <input
+                    id="dob-m"
+                    class="dob"
+                    maxlength="2"
+                    type="text"
+                    placeholder="mm"
+                  />
+                  <input
+                    id="dob-y"
+                    class="dob"
+                    maxlength="4"
+                    type="text"
+                    placeholder="yyyy"
+                  />
+                </div>
+
+                <div class="checkbox-container">
+                  <input
+                    id="email-confirm"
+                    type="checkbox"
+                    data-gtm-form-interact-field-id="0"
+                  />
+                  <label for="email-confirm">
+                    <span class="faux-checkbox"
+                      >I confirm that I'm happy for you to use my nickname on
+                      the Oxplore site as described above.</span
+                    >
+                  </label>
+                </div>
+
+                <div class="btn-container">
+                  <a href="#" class="btn submit"> Next </a>
+                </div>
               </div>
-
-              <a href="#" class="btn"> Next </a>
-
-              <p class="new-paragraph">
-                If you would like us to stop using any of the information you
-                have given to us a later date, you can tell us by sending an
-                email to
-                <a href="mailto:oxplore@admin.ox.ac.uk"
-                  >oxplore@admin.ox.ac.uk</a
-                >
-              </p>
             </div>
           </div>
         </div>
       </section>
     </main>
+
     <!-- Bootstrap JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      //  dynamically calculate navbar height
       document.addEventListener("DOMContentLoaded", function () {
         const navbar = document.getElementById("topnav");
         const navbarHeight = navbar.offsetHeight;

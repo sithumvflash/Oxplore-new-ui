@@ -1,0 +1,277 @@
+p,
+li,
+a,
+span,
+label,
+input,
+button {
+  font-family: "Soleil Bk", sans-serif;
+}
+
+/* 4. Bold weight — headings, strong, .font-bold utility */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+.font-bold {
+  font-family: "Soleil", sans-serif;
+}
+
+body {
+  background-color: var(--clr-theme-purple  );
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(7deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* .login-main {
+  min-height: 100vh;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0 00px;
+} */
+
+body {
+  padding-top: 0; /* JS will set this dynamically */
+}
+
+.dob-register .table-container {
+  display: table;
+  width: 100%;
+  height: calc(100vh - 71px);
+}
+
+.dob-register .table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.dob-register .inner {
+  max-width: 930px;
+  padding: 60px 20px;
+  margin: auto;
+  text-align: center;
+  color: #ffffff;
+  font-family: "soleil", sans-serif;
+}
+
+.dob-register h1 {
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 40px;
+  margin: 0.67em 0;
+}
+
+.dob-register h2 {
+  font-size: 22px;
+  text-align: center;
+  font-weight: normal;
+  line-height: 32px;
+}
+
+.dob-register .field-container {
+  position: relative;
+  max-width: 500px;
+  margin: 25px auto;
+  text-align: left;
+}
+
+.dob-register  .half{
+    max-width: 250px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.dob-register label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dob-register input {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  text-align: left;
+  padding: 15px;
+  font-weight: 100 !important;
+  font-family: "soleil", sans-serif;
+  font-size: 20px;
+  width: 100%;
+  max-width: 500px;
+  color: #ffffff;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.dob-register .error {
+  display: block;
+  margin-top: 8px;
+  text-align: right;
+}
+
+.dob-register .fa {
+  display: inline-block;
+  font: normal normal normal 14px / 1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+}
+
+.dob-register .btn {
+  display: inline-block;
+  color: #ffffff;
+  box-sizing: content-box;
+  min-width: 100px;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-align: center;
+}
+
+.dob-register .submit,
+.dob-register .cancel {
+  font-size: 28px;
+  box-shadow: 7px 7px 4px 0px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  transform: rotate(0deg);
+  line-height: 55px;
+  transition: all 0.3s;
+  margin: 10px;
+  padding: 5px 0;
+  background-color: #ff007a;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  width: 290px;
+  border-radius: 0;
+}
+
+.dob-register .submit:hover,
+.dob-register .cancel:hover {
+  color: #ff007a;
+  background-color: #ffffff;
+  border-color: #ff007a;
+  animation: swing 0.5s ease-in-out infinite;
+}
+
+.dob-register .back-home{
+    font-size: 20px !important;
+}
+
+
+.dob-register .field-container .school-name{
+    
+}
+
+.dob-register .field-container .dob{
+    width: 100px;
+    text-align: center;
+}
+
+.dob-register .field-container .dob::placeholder{
+    color: #ffffff;
+}
+
+.dob-register .field-container #dob-y{
+    width: 200px;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+  .dob-register .submit,
+  .dob-register .cancel {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dob-register .field-container .dob {
+    width: 100% !important;
+    max-width: 100px;
+   
+    margin-bottom: 10px;
+  }
+
+  .dob-register .field-container #dob-y {
+    width: 100% !important;
+  }
+}
+
+
+
+.checkbox-container {
+  margin: 40px auto;
+  max-width: 500px;
+}
+
+.checkbox-container input {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+.checkbox-container input + label {
+  cursor: pointer;
+}
+
+.checkbox-container input + label span.faux-checkbox {
+  background-image: url(../images/check-blank.svg);
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px 0 3px 55px;
+  text-align: left;
+}
+
+.checkbox-container input:checked + label span.faux-checkbox {
+  background-image: url(../images/check-correct_pink.svg);
+}
+
+.checkbox-container label {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.checkbox-container .faux-checkbox:hover {
+  border-color: #ff007a;
+}
