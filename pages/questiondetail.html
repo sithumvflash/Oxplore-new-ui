@@ -1449,20 +1449,30 @@
         const rightArrow = document.querySelector(".ox-slider .arrow.right");
         let currentIndex = 0;
 
-        function showSlide(index) {
-          slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === index);
+        function showSlide(newIndex) {
+          const oldSlide = slides[currentIndex];
+          const nextSlide = slides[newIndex];
+
+          oldSlide.classList.remove("active");
+          oldSlide.classList.add("exit");
+
+          oldSlide.addEventListener("transitionend", function cleanup() {
+            oldSlide.classList.remove("exit");
+            oldSlide.removeEventListener("transitionend", cleanup);
           });
+
+          nextSlide.classList.add("active");
+
+          currentIndex = newIndex;
         }
 
         leftArrow.addEventListener("click", () => {
-          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-          showSlide(currentIndex);
+          const next = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(next);
         });
-
         rightArrow.addEventListener("click", () => {
-          currentIndex = (currentIndex + 1) % slides.length;
-          showSlide(currentIndex);
+          const next = (currentIndex + 1) % slides.length;
+          showSlide(next);
         });
 
         showSlide(currentIndex);

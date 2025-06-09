@@ -160,16 +160,16 @@ strong,
 
 /* === Apply Animations === */
 
-.central-image {
+.question-detail-section .central-image {
   animation: bounceSlideUp 1.5s ease-out both;
 }
 
-.header-text-section {
+.question-detail-section .header-text-section {
   animation: spinDropDown 1.2s ease-out both;
   animation-delay: 0.4s;
 }
 
-.paragraph-text-section {
+.question-detail-section .paragraph-text-section {
   animation: slideUpFade 1s ease-out both;
   animation-delay: 0.8s;
 }
@@ -971,13 +971,14 @@ ul.additional-resources .inner-list > li > a.add-res-item {
   background-color: #fff;
   border: 2px solid #031d40;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 0;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ul.additional-resources .inner-list > li > a.add-res-item:hover {
   background-color: #031d40;
   color: #fff;
+  border-color: #fff;
 }
 
 #voteNow .additional-resources {
@@ -1011,18 +1012,27 @@ ul.additional-resources .inner-list > li > a.add-res-item:hover {
 }
 
 .ox-slider .slide {
-  display: none;
+  /* display: none; */
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  transition: opacity 0.5s ease-in-out;
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
+  opacity: 0;
 }
 
 .ox-slider .slide.active {
-  display: block;
+  transform: translateX(0);
+  opacity: 1;
   z-index: 1;
+}
+
+.ox-slider .slide.exit {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 0;
 }
 
 .ox-slider .img {
