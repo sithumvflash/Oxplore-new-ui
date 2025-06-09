@@ -20,8 +20,8 @@ strong,
   font-family: "Soleil", sans-serif;
 }
 
-body{
-    background: var(--clr-blue-600);
+body {
+  background: var(--clr-blue-600);
 }
 
 .vote-page {
@@ -127,7 +127,7 @@ body{
 
 .option:nth-child(1) .score,
 .option:nth-child(3) .score {
-  left: -185px;
+  left: -140px;
   background-position: right center;
   padding: 0 60px 0 0;
   text-align: right;
@@ -135,7 +135,7 @@ body{
 
 .option:nth-child(2) .score,
 .option:nth-child(4) .score {
-  right: -185px;
+  right: -140px;
   background-position: left center;
   padding: 0 0 0 60px;
   text-align: left;
@@ -189,10 +189,6 @@ body{
   cursor: pointer;
 }
 
-
-
-
-
 .comment-section {
   min-height: 100vh;
   position: relative;
@@ -204,22 +200,20 @@ body{
 }
 
 .comment-section .inner {
-    max-width: 600px;
-    padding: 10px 20px;
-    margin: auto;
+  max-width: 600px;
+  padding: 10px 20px;
+  margin: auto;
 }
-
 
 .comment-section .inner h1 {
-    font-size: 43px;
-    line-height: 36px;
-    font-weight: bold;
-    text-align: left;
-
+  font-size: 43px;
+  line-height: 36px;
+  font-weight: bold;
+  text-align: left;
 }
 
-a{
-    color: #ff007a;
+a {
+  color: #ff007a;
 }
 
 /* comment section styles */
@@ -341,7 +335,6 @@ a{
   -webkit-font-smoothing: antialiased;
 }
 
-
 .vote-page,
 .comment-section {
   min-height: auto !important;
@@ -375,8 +368,12 @@ body {
   }
 
   .option {
+    min-width: 200px;
     padding: 20px;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 30px;
   }
 
   .vote-page .sub-header-section h2 {

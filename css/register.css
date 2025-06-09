@@ -103,26 +103,25 @@ body {
   line-height: 32px;
 }
 
-.register-page .legal-scroller p{
-    line-height: 1.5;
-    font-weight: 300 !important;
+.register-page .legal-scroller p {
+  line-height: 1.5;
+  font-weight: 300 !important;
 }
 
-.register-page .legal-scroller a{
-    color: #ff007a;
-    text-decoration: underline;
+.register-page .legal-scroller a {
+  color: #ff007a;
+  text-decoration: underline;
 }
 
-.register-page .legal-scroller{
-    max-height: 300px;
-    overflow-y: scroll;
-    background-color: #ffffff;
-    color: #000000;
-    text-align: justify;
-    padding: 0px 30px;
-    margin-bottom: 1.5em;
+.register-page .legal-scroller {
+  max-height: 300px;
+  overflow-y: scroll;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: justify;
+  padding: 0px 30px;
+  margin-bottom: 1.5em;
 }
-
 
 .register-page .btn {
   display: inline-block;
@@ -159,7 +158,6 @@ body {
   border-color: #ff007a;
   animation: swing 0.5s ease-in-out infinite;
 }
-
 
 @media (max-width: 576px) {
   .register-page .submit,
