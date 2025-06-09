@@ -21,7 +21,7 @@ strong,
 }
 
 body {
-  background-color: var(--clr-theme-purple  );
+  background-color: var(--clr-theme-purple);
 }
 
 @keyframes swing {
@@ -103,10 +103,10 @@ body {
   text-align: left;
 }
 
-.dob-register  .half{
-    max-width: 250px;
-    display: inline-block;
-    vertical-align: top;
+.dob-register .half {
+  max-width: 250px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .dob-register label {
@@ -114,6 +114,12 @@ body {
   margin-bottom: 5px;
   font-size: 16px;
   font-weight: bold;
+}
+
+.dob-register .field-container .small {
+  line-height: 1.5;
+  font-size: 12px;
+  margin: 0;
 }
 
 .dob-register input {
@@ -180,27 +186,25 @@ body {
   animation: swing 0.5s ease-in-out infinite;
 }
 
-.dob-register .back-home{
-    font-size: 20px !important;
+.dob-register .back-home {
+  font-size: 20px !important;
 }
 
-
-.dob-register .field-container .school-name{
-    
+.dob-register .field-container .school-name {
 }
 
-.dob-register .field-container .dob{
-    width: 100px;
-    text-align: center;
+.dob-register .field-container .dob {
+  width: 100px;
+  text-align: center;
 }
 
-.dob-register .field-container .dob::placeholder{
-    color: #ffffff;
+.dob-register .field-container .dob::placeholder {
+  color: #ffffff;
 }
 
-.dob-register .field-container #dob-y{
-    width: 200px;
-    text-align: center;
+.dob-register .field-container #dob-y {
+  width: 200px;
+  text-align: center;
 }
 
 @media (max-width: 576px) {
@@ -216,7 +220,7 @@ body {
   .dob-register .field-container .dob {
     width: 100% !important;
     max-width: 100px;
-   
+
     margin-bottom: 10px;
   }
 
@@ -224,8 +228,6 @@ body {
     width: 100% !important;
   }
 }
-
-
 
 .checkbox-container {
   margin: 40px auto;
