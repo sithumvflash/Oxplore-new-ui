@@ -75,7 +75,7 @@ body {
 
 .user-dashboard .inner {
   max-width: 1320px;
-  padding: 60px 20px;
+  padding: 20px 20px;
   margin: auto;
   text-align: center;
   color: #ffffff;
@@ -123,7 +123,7 @@ body {
 }
 
 .user-dashboard .row {
-  align-items: center !important;
+  /* align-items: center !important; */
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
@@ -389,4 +389,62 @@ svg {
 
 .card-user-info {
   margin-left: 1rem;
+}
+
+/* ── BOOKMARKS CARD ───────────────────────────────────────────────────── */
+.bookmarks-card {
+  background-color: #cf0366;
+  color: #fff;
+  padding: 1rem 1rem;
+  border-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.bookmarks-card .bookm-head {
+  font-size: 1.5rem;
+  letter-spacing: -0.04rem;
+  line-height: 1.5;
+  font-weight: bold;
+  /* margin: 0 0 0.5rem; */
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.bookmarks-card hr {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0 0 1.5rem;
+}
+
+.bookmarks-card .empty-bookmarks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  text-align: center;
+}
+
+.bookmarks-card .empty-bookmarks-icon {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.bookmarks-card .empty-bookmarks h3 {
+  font-weight: bold;
+  display: block;
+  font-size: 20px;
+  margin: 0;
+}
+
+.bookmarks-card .empty-bookmarks p {
+  font-size: 16px;
+  font-weight: lighter !important;
+  margin-bottom: 1.8rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 60%;
 }
