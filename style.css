@@ -79,7 +79,6 @@ TYPOGRAPHY
   --op-800: 1;
 }
 
-
 .txt-primary-100 {
   color: var(--clr-primary-100) !important;
 }
@@ -514,25 +513,24 @@ body {
   padding: 0;
 }
 
- html, body {
-        height: 100%;
-    }
-    
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-    
-    /* main {
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* main {
         flex: 1;
     } */
-    
-    footer {
-        margin-top: auto;
-    }
 
-    
+footer {
+  margin-top: auto;
+}
 
 /* 2. Book weight — paragraphs, body copy */
 p,
@@ -543,15 +541,13 @@ label,
 input,
 button {
   font-family: "Soleil Bk", sans-serif;
-  
 }
-
 
 .light-text,
 .text-light {
   font-family: "Soleil Lt", sans-serif;
-  font-weight: 300; 
-  font-size: 0.875em; 
+  font-weight: 300;
+  font-size: 0.875em;
 }
 
 /* 4. Bold weight — headings, strong, .font-bold utility */
@@ -564,12 +560,7 @@ h6,
 strong,
 .font-bold {
   font-family: "Soleil", sans-serif;
-  
 }
-
-
-
-
 
 /* Headings */
 h1 {
@@ -582,7 +573,6 @@ h3 {
   font-size: 1.75rem;
 }
 
-
 .callout {
   font-family: "Soleil Bk", sans-serif;
   background: #f9f9f9;
@@ -592,7 +582,7 @@ h3 {
 
 /* Fine print */
 .small-print {
-  composes: text-light; 
+  composes: text-light;
   /* font-family: 'Soleil Lt', sans-serif; */
   /* font-weight: 300; */
   font-size: 0.75rem;
@@ -608,8 +598,6 @@ h3 {
 .navigation__top .navbar-nav .nav-item .nav-link:active {
   background-color: #f8f9fa !important;
 }
-
-
 
 .offcanvas {
   visibility: hidden;
@@ -653,7 +641,6 @@ h3 {
   display: none;
   z-index: 1000;
 }
-
 
 .brand-logo-ox svg.logo {
   height: 52px;
@@ -699,7 +686,6 @@ ul.social-icons li a {
 .dropdown-menu {
   padding: 15px;
   text-align: right;
-  
 }
 
 ul.offcanvas-nav {
@@ -746,7 +732,6 @@ ul.offcanvas-nav li {
 .reset-pw h2 {
   font-size: 1.5em;
 }
-
 
 .toolbar-fixed {
   margin: 0 !important;
@@ -876,7 +861,6 @@ ul.offcanvas-nav li {
   /* background-color: #f8f9fa !important; */
 }
 
-
 .navigation__top .nav-item .nav-link.active {
   color: var(--clr-primary-100);
 }
@@ -917,7 +901,7 @@ ul.offcanvas-nav li {
 .offcanvas.active {
   left: 0;
   visibility: visible;
-  z-index: 1001; 
+  z-index: 1001;
 }
 
 /* replaced “.overlay.show” rule with: */
@@ -925,13 +909,9 @@ ul.offcanvas-nav li {
   display: block;
 }
 
-
-.dropdown-item{
+.dropdown-item {
   color: #808080;
 }
-
-
-
 
 .open-btn:hover {
   color: var(--clr-theme-pink);
@@ -951,7 +931,7 @@ ul.offcanvas-nav li {
   display: block;
 } */
 
-.oxford-logo{
+.oxford-logo {
   background-image: url(/images/oxford-logo-for-mobile-menu.svg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -961,12 +941,7 @@ ul.offcanvas-nav li {
   position: absolute;
   bottom: 30px;
   margin-left: 15px;
-  
 }
-
-
-
-
 
 /* Footer Section */
 
@@ -984,9 +959,8 @@ ul.offcanvas-nav li {
 }
 
 footer {
-    background-color: var(--clr-neutral-450); 
-    padding: 2rem 0;
-
+  background-color: var(--clr-neutral-450);
+  padding: 2rem 0;
 }
 
 .footer-social {
@@ -995,37 +969,22 @@ footer {
 }
 
 .footer-social a {
-    transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .footer-social a:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .footer-social > span {
-  margin-right: 0.5rem;    
+  margin-right: 0.5rem;
 }
 
 .footer-social a {
-  margin: 0 0.25rem;    
+  margin: 0 0.25rem;
 }
 
 .fs-small-600 {
-    font-size: 0.9rem;
-    font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
