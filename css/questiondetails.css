@@ -1150,3 +1150,36 @@ p {
     padding: 15px 20px;
   }
 }
+
+/* updates css for swipe questions */
+
+.answers-list li.selected-correct .answer-circle {
+  background-color: #e6007e;
+  border-color: #ffffff;
+}
+
+.answers-list li.selected-incorrect .answer-circle {
+  background-color: #e6007e;
+  border-color: #ffffff;
+}
+.answers-list li.selected-incorrect {
+  opacity: 1;
+}
+
+.answers-list li.revealed-correct .answer-circle {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.answers-list li.revealed-correct .answer-circle::after,
+.answers-list li.selected-correct .answer-circle::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 12px;
+  transform: translate(-50%, -50%);
+}

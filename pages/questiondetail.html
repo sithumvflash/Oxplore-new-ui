@@ -1250,10 +1250,10 @@
 
               li.classList.add("selected");
               if (li.dataset.correct === "true") {
-                li.classList.add("correct");
+                li.classList.add("correct", "selected-correct");
               } else {
-                li.classList.add("incorrect");
-                correctLi.classList.add("correct");
+                li.classList.add("incorrect", "selected-incorrect");
+                correctLi.classList.add("correct", "revealed-correct");
               }
 
               if (description) description.classList.remove("d-none");
