@@ -1,5 +1,3 @@
-
-
 @keyframes swing {
   20% {
     transform: rotate(7deg);
@@ -168,144 +166,6 @@
   color: var(--clr-theme-purple) !important;
 }
 
-/* .section.active .slide.active .main-object.jumping_one {
-  animation: jumping_one 1.5s 1;
-  animation-duration: 1.5s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: running;
-  animation-name: jumping_one;
-  animation-timeline: auto;
-  animation-range-start: normal;
-  animation-range-end: normal;
-}
-.slide .main-object.jumping_one {
-  animation: jumping_three 1.5s 1;
-}
-
-@keyframes jumping_one {
-  25% {
-    left: 10%;
-    transform: rotate(-30deg) scale(0.5, 0.5);
-    transform-origin: center;
-    top: 60%;
-  }
-  50% {
-    left: 50%;
-    transform: rotate(10deg) scale(0.75, 0.75);
-    transform-origin: center;
-    top: 40%;
-  }
-  75% {
-    left: 15%;
-    transform: rotate(-10deg) scale(2, 2);
-    transform-origin: center;
-    top: 25%;
-  }
-  100% {
-    left: 80%;
-    transform: rotate(0deg) scale(1, 1) translateX(-50%);
-    transform-origin: center;
-    top: 10%;
-  }
-}
-
-.section.active .slide.active .main-object.jumping_two {
-  animation: jumping_two 1.5s 1;
-  animation-duration: 1.5s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: running;
-  animation-name: jumping_two;
-  animation-timeline: auto;
-  animation-range-start: normal;
-  animation-range-end: normal;
-}
-.slide .main-object.jumping_two {
-  animation: jumping_one 1.5s 1;
-}
-
-@keyframes jumping_two {
-  25% {
-    left: 70%;
-    transform: rotate(15deg) scale(2, 2);
-    transform-origin: center;
-    top: 60%;
-  }
-  50% {
-    left: 50%;
-    transform: rotate(5deg) scale(0.75, 0.75);
-    transform-origin: center;
-    top: 30%;
-  }
-  75% {
-    left: 10%;
-    transform: rotate(-10deg) scale(1.5, 1.5);
-    transform-origin: center;
-    top: 20%;
-  }
-  100% {
-    left: 50%;
-    transform: rotate(0deg) scale(1, 1) translateX(-50%);
-    transform-origin: center;
-    top: 10%;
-  }
-}
-
-.section.active .slide.active .main-object.jumping_three {
-  animation: jumping_three 1.5s;
-  animation-duration: 1.5s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: running;
-  animation-name: jumping_three;
-  animation-timeline: auto;
-  animation-range-start: normal;
-  animation-range-end: normal;
-}
-.slide .main-object.jumping_three {
-  animation: jumping_two 1.5s 1;
-}
-
-@keyframes jumping_three {
-  25% {
-    left: 50%;
-    transform-origin: center;
-    transform: scale(0.5) translateX(-50%);
-    top: 15%;
-  }
-
-  50% {
-    left: 20%;
-    transform: rotate(-170deg) scale(1, 1);
-    transform-origin: center;
-    top: 40%;
-  }
-
-  75% {
-    left: 15%;
-    transform: rotate(-10deg) scale(2, 2);
-    transform-origin: center;
-    top: 25%;
-  }
-
-  100% {
-    left: 50%;
-    transform: rotate(0deg) scale(1, 1) translateX(-50%);
-    transform-origin: center;
-    top: 15%;
-  }
-} */
-
 .main-object {
   background-position: center;
   background-repeat: no-repeat;
@@ -417,14 +277,6 @@
   overflow: hidden;
 }
 
-.slide .main-object {
-  position: static !important;
-  /* transform: none !important; */
-  /* position: static; */
-  /* transform: none; */
-  margin-bottom: 5rem;
-}
-
 .question-slide-text {
   position: relative;
   z-index: 1;
@@ -456,13 +308,6 @@
   margin-bottom: 2rem;
 }
 
-.main-object {
-  position: relative !important;
-  transform: none !important;
-  width: 100%;
-  height: auto;
-}
-
 .question-slide-text {
   position: absolute;
   bottom: -10%;
@@ -472,7 +317,6 @@
   max-width: 600px;
   margin: 0;
 }
-
 
 @media (max-width: 768px) {
   .question-slide-text {
@@ -486,7 +330,6 @@
   }
 }
 
-
 .main-object-container {
   z-index: 0;
 }
@@ -495,26 +338,165 @@
   z-index: 1;
 }
 
-.slide-text-animation,
-.question-slide-text {
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 105%;
-  margin: auto;
-  width: 600px;
-  text-align: center;
-  box-sizing: border-box;
-  transition: bottom 1s, transform 1s;
-  transform: rotate(359deg);
-}
-.section.active .slide.active .slide-text-animation,
-.section.active .question-slide-text {
-  bottom: 25%;
-  transform: rotate(0deg);
+/* styles for animations */
+
+.section.active .slide.active .main-object.jumping_one {
+  animation: jumping_one 1.5s 1;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: jumping_one;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
 }
 
+@keyframes jumping_one {
+  25% {
+    left: 10%;
+    transform: rotate(-30deg) scale(0.5, 0.5);
+    transform-origin: center;
+    top: 60%;
+  }
+  50% {
+    left: 50%;
+    transform: rotate(10deg) scale(0.75, 0.75);
+    transform-origin: center;
+    top: 40%;
+  }
+  75% {
+    left: 15%;
+    transform: rotate(-10deg) scale(2, 2);
+    transform-origin: center;
+    top: 25%;
+  }
+  100% {
+    left: 50%;
+    transform: rotate(0deg) scale(1, 1) translateX(-50%);
+    transform-origin: center;
+    top: 10%;
+  }
+}
 
+.section.active .slide.active .main-object.jumping_two {
+  animation: jumping_two 1.5s 1;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: jumping_two;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+}
 
+@keyframes jumping_two {
+  25% {
+    left: 70%;
+    transform: rotate(15deg) scale(2, 2);
+    transform-origin: center;
+    top: 60%;
+  }
+  50% {
+    left: 50%;
+    transform: rotate(5deg) scale(0.75, 0.75);
+    transform-origin: center;
+    top: 30%;
+  }
+  75% {
+    left: 10%;
+    transform: rotate(-10deg) scale(1.5, 1.5);
+    transform-origin: center;
+    top: 20%;
+  }
+  100% {
+    left: 50%;
+    transform: rotate(0deg) scale(1, 1) translateX(-50%);
+    transform-origin: center;
+    top: 10%;
+  }
+}
 
+.section.active .slide.active .main-object.jumping_three {
+  animation: jumping_three 1.5s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: jumping_three;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+}
 
+@keyframes jumping_three {
+  25% {
+    left: 50%;
+    transform-origin: center;
+    transform: scale(0.5) translateX(-50%);
+    top: 15%;
+  }
+
+  50% {
+    left: 20%;
+    transform: rotate(-170deg) scale(1, 1);
+    transform-origin: center;
+    top: 40%;
+  }
+
+  75% {
+    left: 15%;
+    transform: rotate(-10deg) scale(2, 2);
+    transform-origin: center;
+    top: 25%;
+  }
+
+  100% {
+    left: 50%;
+    transform: rotate(0deg) scale(1, 1) translateX(-50%);
+    transform-origin: center;
+    top: 15%;
+  }
+}
+
+/* Base state: no animation */
+.main-object.jumping_one,
+.main-object.jumping_two,
+.main-object.jumping_three {
+  animation: none !important;
+}
+
+/* Only when the slide is active… */
+.section.active .slide.active .main-object.jumping_one {
+  animation: jumping_one 1.5s ease forwards !important;
+}
+
+.section.active .slide.active .main-object.jumping_two {
+  animation: jumping_two 1.5s ease forwards !important;
+}
+
+.section.active .slide.active .main-object.jumping_three {
+  animation: jumping_three 1.5s ease forwards !important;
+}
+
+#question-grid .slide .main-object,
+#question-grid-new .slide .main-object {
+  position: static !important;
+  /* transform: none !important; */
+  margin-bottom: 5rem;
+}
+
+/*  keep the main-object absolutely positioned */
+.section-0 .slide .main-object {
+  position: absolute !important;
+}

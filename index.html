@@ -1176,7 +1176,7 @@
           overlay.classList.remove("active");
         });
 
-        // Initialise fullpage.js for #fullpage
+        //fullpage.js for #fullpage
         new fullpage("#fullpage", {
           autoScrolling: true,
           fitToSection: true,
@@ -1186,12 +1186,27 @@
           scrollingSpeed: 700,
           css3: true,
           scrollHorizontally: true,
+
+          // Before we leave a slide, clear its animation
+          onSlideLeave: function (section, origin, destination, direction) {
+            var prevSlide = origin.item;
+            var mainObj = prevSlide.querySelector(".main-object");
+            if (mainObj) {
+              // remove any inline animation so it can replay
+              mainObj.style.animation = "none";
+            }
+          },
+
+          // After we load a new slide, reflow+play the correct keyframe
+          afterSlideLoad: function (section, origin, destination, direction) {
+            var slide = destination.item;
+            var mainObj = slide.querySelector(".main-object");
+            if (!mainObj) return;
+
+            // Force reflow to reset the animation
+            void mainObj.offsetWidth;
+          },
         });
-
-        // 👉 Initialise horizontal slider for #question-grid-new
-
-        // Optional: scrollToSection1()
-        // ...
       });
     </script>
   </body>
