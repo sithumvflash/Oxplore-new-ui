@@ -277,14 +277,14 @@
   overflow: hidden;
 }
 
-.question-slide-text {
+/* .question-slide-text {
   position: relative;
   z-index: 1;
   width: 100%;
   max-width: 800px;
   margin: -15vh auto 0;
   text-align: center;
-}
+} */
 
 .highlight-block {
   white-space: normal !important;
@@ -308,7 +308,7 @@
   margin-bottom: 2rem;
 }
 
-.question-slide-text {
+/* .question-slide-text {
   position: absolute;
   bottom: -10%;
   left: 50%;
@@ -316,7 +316,7 @@
   width: 90%;
   max-width: 600px;
   margin: 0;
-}
+} */
 
 @media (max-width: 768px) {
   .question-slide-text {
@@ -334,9 +334,9 @@
   z-index: 0;
 }
 
-.question-slide-text {
+/* .question-slide-text {
   z-index: 1;
-}
+} */
 
 /* styles for animations */
 
@@ -499,4 +499,45 @@
 /*  keep the main-object absolutely positioned */
 .section-0 .slide .main-object {
   position: absolute !important;
+}
+
+/* slide-text-animation styles */
+
+.question-slide-text {
+  position: absolute;
+  left: 50%;
+  bottom: 8% !important;
+  transform: translate(-50%, 0);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  z-index: 2;
+}
+
+@keyframes spinDropIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -600px) rotate(-360deg) scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, 30px) rotate(10deg) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+  }
+}
+
+/* Animation class */
+.animate-question-text {
+  animation: spinDropIn 1.2s ease-out forwards;
+  transform-origin: top center;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
 }

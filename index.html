@@ -1199,12 +1199,19 @@
 
           // After we load a new slide, reflow+play the correct keyframe
           afterSlideLoad: function (section, origin, destination, direction) {
-            var slide = destination.item;
-            var mainObj = slide.querySelector(".main-object");
-            if (!mainObj) return;
+            const slide = destination.item;
 
-            // Force reflow to reset the animation
-            void mainObj.offsetWidth;
+            // Animate main-object
+            const mainObj = slide.querySelector(".main-object");
+            if (mainObj) void mainObj.offsetWidth;
+
+            // Animate question-slide-text
+            const questionText = slide.querySelector(".question-slide-text");
+            if (questionText) {
+              questionText.classList.remove("animate-question-text"); // Reset if already present
+              void questionText.offsetWidth; // Force reflow
+              questionText.classList.add("animate-question-text");
+            }
           },
         });
       });
