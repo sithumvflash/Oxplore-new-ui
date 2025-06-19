@@ -1234,7 +1234,7 @@
           css3: true,
           scrollHorizontally: true,
 
-          // 1) First‐slide animation on page load
+          //First‐slide animation on page load
           afterRender: function () {
             const firstText = document.querySelector(
               ".section-0 .slide.active .question-slide-text"
@@ -1242,7 +1242,7 @@
             if (firstText) firstText.classList.add("animate-question-text");
           },
 
-          // 2) Fire when you scroll down/up into section-0 vertically
+          //  scroll down/up into section-0 vertically
           afterLoad: function (origin, destination, direction) {
             // section0 has id="section0"
             if (destination.item.id === "section0") {
@@ -1257,14 +1257,14 @@
             }
           },
 
-          // 3) Clear main-object so it can replay
+          //Clear main-object so it can replay
           onSlideLeave: function (section, origin, destination, direction) {
             const prev = origin.item;
             const mainObj = prev.querySelector(".main-object");
             if (mainObj) mainObj.style.animation = "none";
           },
 
-          // 4) Fire on horizontal swipe between slides
+          //horizontal swipe between slides
           afterSlideLoad: function (section, origin, destination, direction) {
             const slide = destination.item;
 
