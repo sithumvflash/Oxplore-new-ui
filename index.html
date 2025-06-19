@@ -1176,6 +1176,66 @@
           overlay.classList.remove("active");
         });
 
+        function animateGridItem(tile) {
+          const header = tile.querySelector(".grid-text-short");
+          const btn = tile.querySelector(".btn-select");
+
+          if (!header || !btn) return;
+
+          // Reset classes
+          header.classList.remove(
+            "animate-green-header",
+            "animate-blue-header",
+            "animate-pink-header",
+            "animate-red-header",
+            "animate-maroon-header",
+            "animate-purple-header"
+          );
+          btn.classList.remove("animate-btn");
+
+          // Trigger reflow to restart animation
+          void header.offsetWidth;
+          void btn.offsetWidth;
+
+          // Apply animations based on tile color
+          if (tile.classList.contains("bg-theme-green")) {
+            header.classList.add("animate-green-header");
+          } else if (tile.classList.contains("bg-theme-blue")) {
+            header.classList.add("animate-blue-header");
+          } else if (tile.classList.contains("bg-theme-pink")) {
+            header.classList.add("animate-pink-header");
+          } else if (tile.classList.contains("bg-theme-red")) {
+            header.classList.add("animate-red-header");
+          } else if (tile.classList.contains("bg-theme-maroon")) {
+            header.classList.add("animate-maroon-header");
+          } else if (tile.classList.contains("bg-theme-purple")) {
+            header.classList.add("animate-purple-header");
+          }
+
+          // Animate the button (same animation for all)
+          btn.classList.add("animate-btn");
+        }
+
+        // Set up Intersection Observer for scroll-triggered animations
+        const observerOptions = {
+          threshold: 0.3, // Trigger when 30% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateGridItem(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observe all grid tiles in #question-grid-new
+        document
+          .querySelectorAll("#question-grid-new .bg-slide")
+          .forEach((tile) => {
+            observer.observe(tile);
+          });
+
         //fullpage.js for #fullpage
         new fullpage("#fullpage", {
           autoScrolling: true,
@@ -1197,20 +1257,22 @@
             }
           },
 
-          // After we load a new slide, reflow+play the correct keyframe
+          // After load a new slide, reflow+play the correct keyframe
           afterSlideLoad: function (section, origin, destination, direction) {
             const slide = destination.item;
 
-            // Animate main-object
-            const mainObj = slide.querySelector(".main-object");
-            if (mainObj) void mainObj.offsetWidth;
-
-            // Animate question-slide-text
+            // Animate question text
             const questionText = slide.querySelector(".question-slide-text");
             if (questionText) {
-              questionText.classList.remove("animate-question-text"); // Reset if already present
-              void questionText.offsetWidth; // Force reflow
+              questionText.classList.remove("animate-question-text");
+              void questionText.offsetWidth;
               questionText.classList.add("animate-question-text");
+            }
+
+            // Animate tiles inside #question-grid-new
+            if (slide.closest("#question-grid-new")) {
+              const tiles = slide.querySelectorAll(".bg-slide");
+              tiles.forEach(animateGridItem);
             }
           },
         });

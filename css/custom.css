@@ -541,3 +541,121 @@
   animation-range-start: normal;
   animation-range-end: normal;
 }
+
+/* Question grid new animations */
+
+/* GREEN HEADER SPIN */
+@keyframes spinIn {
+  0% {
+    transform: rotate(-720deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+.animate-green-header {
+  animation: spinIn 0.8s ease-out forwards;
+}
+
+/* BLUE HEADER SLIDE IN FROM LEFT */
+@keyframes slideLeftIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-blue-header {
+  animation: slideLeftIn 0.8s ease-out forwards;
+}
+
+/* PINK HEADER SLIDE IN FROM RIGHT */
+@keyframes slideRightIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-pink-header {
+  animation: slideRightIn 0.8s ease-out forwards;
+}
+
+/* RED HEADER ZOOM */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate-red-header {
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* MAROON HEADER ROTATE */
+@keyframes rotateIn {
+  0% {
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+.animate-maroon-header {
+  animation: rotateIn 0.8s ease-out forwards;
+}
+
+/* PURPLE HEADER SLIDE FROM BOTTOM */
+@keyframes slideUpIn {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-purple-header {
+  animation: slideUpIn 0.8s ease-out forwards;
+}
+
+/* Fade in button */
+@keyframes fadeInBtn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-btn {
+  animation: fadeInBtn 0.6s ease-out forwards;
+}
+
+/* Ensure animations only play once */
+.animate-green-header,
+.animate-blue-header,
+.animate-pink-header,
+.animate-red-header,
+.animate-maroon-header,
+.animate-purple-header,
+.animate-btn {
+  animation-fill-mode: forwards;
+}
