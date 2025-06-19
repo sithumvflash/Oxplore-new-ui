@@ -1165,12 +1165,10 @@
           offcanvas.classList.add("active");
           overlay.classList.add("active");
         });
-
         closeBtn.addEventListener("click", () => {
           offcanvas.classList.remove("active");
           overlay.classList.remove("active");
         });
-
         overlay.addEventListener("click", () => {
           offcanvas.classList.remove("active");
           overlay.classList.remove("active");
@@ -1179,10 +1177,9 @@
         function animateGridItem(tile) {
           const header = tile.querySelector(".grid-text-short");
           const btn = tile.querySelector(".btn-select");
-
           if (!header || !btn) return;
 
-          // Reset classes
+          // Reset
           header.classList.remove(
             "animate-green-header",
             "animate-blue-header",
@@ -1192,12 +1189,10 @@
             "animate-purple-header"
           );
           btn.classList.remove("animate-btn");
-
-          // Trigger reflow to restart animation
-          void header.offsetWidth;
+          void header.offsetWidth; // reflow
           void btn.offsetWidth;
 
-          // Apply animations based on tile color
+          // Apply by theme
           if (tile.classList.contains("bg-theme-green")) {
             header.classList.add("animate-green-header");
           } else if (tile.classList.contains("bg-theme-blue")) {
@@ -1212,31 +1207,23 @@
             header.classList.add("animate-purple-header");
           }
 
-          // Animate the button (same animation for all)
           btn.classList.add("animate-btn");
         }
 
-        // Set up Intersection Observer for scroll-triggered animations
-        const observerOptions = {
-          threshold: 0.3, // Trigger when 30% of the element is visible
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateGridItem(entry.target);
-            }
-          });
-        }, observerOptions);
-
-        // Observe all grid tiles in #question-grid-new
+        // Scroll‐triggered grid animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) animateGridItem(entry.target);
+            });
+          },
+          { threshold: 0.3 }
+        );
         document
           .querySelectorAll("#question-grid-new .bg-slide")
-          .forEach((tile) => {
-            observer.observe(tile);
-          });
+          .forEach((tile) => observer.observe(tile));
 
-        //fullpage.js for #fullpage
+        // fullpage.js
         new fullpage("#fullpage", {
           autoScrolling: true,
           fitToSection: true,
@@ -1247,21 +1234,41 @@
           css3: true,
           scrollHorizontally: true,
 
-          // Before we leave a slide, clear its animation
-          onSlideLeave: function (section, origin, destination, direction) {
-            var prevSlide = origin.item;
-            var mainObj = prevSlide.querySelector(".main-object");
-            if (mainObj) {
-              // remove any inline animation so it can replay
-              mainObj.style.animation = "none";
+          // 1) First‐slide animation on page load
+          afterRender: function () {
+            const firstText = document.querySelector(
+              ".section-0 .slide.active .question-slide-text"
+            );
+            if (firstText) firstText.classList.add("animate-question-text");
+          },
+
+          // 2) Fire when you scroll down/up into section-0 vertically
+          afterLoad: function (origin, destination, direction) {
+            // section0 has id="section0"
+            if (destination.item.id === "section0") {
+              const text = destination.item.querySelector(
+                ".slide.active .question-slide-text"
+              );
+              if (text) {
+                text.classList.remove("animate-question-text");
+                void text.offsetWidth;
+                text.classList.add("animate-question-text");
+              }
             }
           },
 
-          // After load a new slide, reflow+play the correct keyframe
+          // 3) Clear main-object so it can replay
+          onSlideLeave: function (section, origin, destination, direction) {
+            const prev = origin.item;
+            const mainObj = prev.querySelector(".main-object");
+            if (mainObj) mainObj.style.animation = "none";
+          },
+
+          // 4) Fire on horizontal swipe between slides
           afterSlideLoad: function (section, origin, destination, direction) {
             const slide = destination.item;
 
-            // Animate question text
+            // question‐slide‐text animation
             const questionText = slide.querySelector(".question-slide-text");
             if (questionText) {
               questionText.classList.remove("animate-question-text");
@@ -1269,10 +1276,9 @@
               questionText.classList.add("animate-question-text");
             }
 
-            // Animate tiles inside #question-grid-new
+            // grid tiles if inside #question-grid-new
             if (slide.closest("#question-grid-new")) {
-              const tiles = slide.querySelectorAll(".bg-slide");
-              tiles.forEach(animateGridItem);
+              slide.querySelectorAll(".bg-slide").forEach(animateGridItem);
             }
           },
         });
