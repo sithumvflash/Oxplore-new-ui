@@ -498,3 +498,155 @@ svg {
   flex-direction: column;
   height: 100%;
 }
+
+/* popup styles */
+
+.dialog .inner {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  z-index: 102;
+  max-width: 960px;
+  max-height: 635px;
+  margin: auto;
+  height: calc(100vh - 100px);
+  width: 100%;
+  padding: 0 0 20px;
+}
+
+.dialog .inner .titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ff007a;
+  font-size: 21px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.dialog .inner .titlebar .title {
+  display: inline-block;
+  /* width: calc(100% - 24px); */
+}
+
+.dialog .inner .titlebar .close {
+  display: inline-block;
+  width: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dialog .fa {
+  display: inline-block;
+  font: 14px / 1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  font-weight: bolder;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dialog ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+.dialog#avatar-dialog ul#avatar-list {
+  max-height: 500px;
+  background: #ddd;
+  height: calc(100% - 110px);
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.dialog#avatar-dialog ul#avatar-list li {
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  height: 125px;
+  width: 125px;
+  background-color: #fff;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: 10px 10px 30px;
+  cursor: pointer;
+  border: 0 solid #ff007a;
+  box-sizing: border-box;
+  transition: all 0.25s;
+}
+
+.dialog#avatar-dialog ul#avatar-list li.selected::after {
+  font-family: FontAwesome;
+  content: "\f058";
+  position: absolute;
+  font-size: 18px;
+  height: 25px;
+  width: 25px;
+  color: #ff007a;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.dialog#avatar-dialog ul#avatar-list li:hover {
+  background-size: 110%;
+}
+
+.dialog#avatar-dialog ul#avatar-list li.selected {
+  border: 5px solid #ff007a;
+}
+
+.dialog .inner .buttonbar {
+  text-align: right;
+  padding: 15px 20px;
+}
+
+.dialog .btn {
+  padding: 10px 0;
+  display: inline-block;
+  box-sizing: content-box;
+  min-width: 100px;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-align: center;
+}
+
+.dialog .inner .buttonbar a.btn {
+  color: #fff;
+  background: #ff007a;
+  border: 1px solid #fff;
+}
+
+.dialog .inner .buttonbar a.btn:hover {
+  color: #ff007a;
+  background: #fff;
+  border: 1px solid #ff007a;
+}
+
+.dialog .overlay {
+  display: inline-block;
+  opacity: 1;
+  background: rgba(255, 0, 122, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 101;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+}

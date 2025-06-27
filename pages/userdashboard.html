@@ -397,6 +397,97 @@
                   </div>
                 </div>
 
+                <div id="avatar-dialog" class="dialog">
+                  <div class="inner">
+                    <div class="titlebar">
+                      <div class="title">Select an avatar</div>
+                      <div class="close" title="Close this dialog">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <ul id="avatar-list">
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                        class="selected"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                      <li
+                        style="background-image: url(../images/default.png)"
+                        data-imgurl="/sites/default/platform-files/avatars/default.png"
+                      ></li>
+                    </ul>
+                    <div class="buttonbar">
+                      <a href="#" class="btn">Select</a>
+                    </div>
+                  </div>
+                  <div class="overlay"></div>
+                </div>
+
                 <div class="container user-info-main">
                   <div class="row gx-4 gy-4 align-items-start">
                     <div class="col-12 col-sm-6">
@@ -724,6 +815,44 @@
               input.style.display = "none";
             });
           });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const avatarList = document.querySelectorAll("#avatar-list li");
+
+        avatarList.forEach((item) => {
+          item.addEventListener("click", function () {
+            document
+              .querySelectorAll("#avatar-list li")
+              .forEach((li) => li.classList.remove("selected"));
+            this.classList.add("selected");
+          });
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const avatarTrigger = document.getElementById("avatarTrigger");
+        const dialog = document.getElementById("avatar-dialog");
+        const closeBtn = dialog.querySelector(".close");
+        const overlay = dialog.querySelector(".overlay");
+
+        avatarTrigger.addEventListener("click", function () {
+          dialog.querySelector(".overlay").style.display = "block";
+          dialog.querySelector(".overlay").style.opacity = "1";
+          dialog.querySelector(".inner").style.display = "block";
+        });
+
+        closeBtn.addEventListener("click", function () {
+          dialog.querySelector(".overlay").style.opacity = "0";
+          setTimeout(() => {
+            dialog.querySelector(".overlay").style.display = "none";
+            dialog.querySelector(".inner").style.display = "none";
+          }, 250);
+        });
       });
     </script>
   </body>
