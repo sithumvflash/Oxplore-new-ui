@@ -303,8 +303,7 @@
 }
 
 .more-cta-btn {
-  position: static !important;
-  /* margin-top: 50px; */
+  position: relative !important;
   margin-bottom: 2rem;
 }
 
@@ -517,14 +516,14 @@
 @keyframes spinDropIn {
   0% {
     opacity: 0;
-    transform: translate(-50%, -600px) rotate(-360deg) scale(0.5);
+    transform: translateY(-600px) rotate(-360deg) scale(0.5);
   }
   60% {
     opacity: 1;
-    transform: translate(-50%, 30px) rotate(10deg) scale(1.05);
+    transform: translateY(30px) rotate(10deg) scale(1.05);
   }
   100% {
-    transform: translate(-50%, 0) rotate(0deg) scale(1);
+    transform: translateY(0) rotate(0deg) scale(1);
   }
 }
 
