@@ -385,3 +385,27 @@ body {
     padding: 40px 10px;
   }
 }
+
+#add-comment-form textarea {
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 10px;
+  resize: none;
+}
+
+#add-comment-form .btn-pink {
+  padding: 15px;
+  background: #ff007a;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  display: inline-block;
+  min-width: 100px;
+  text-decoration: none;
+  z-index: 1;
+  border-radius: 0;
+}
+
+#add-comment-form .btn-pink:hover {
+  background: #ffffff;
+  color: #ff007a;
+}
