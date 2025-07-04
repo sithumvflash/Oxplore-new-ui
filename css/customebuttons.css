@@ -53,11 +53,6 @@
   border-color: var(--clr-theme-blue);
 }
 
-.slide-cta .btn:not(.theme-title):hover,
-.slide-cta .btn:not(.theme-title):focus {
-  text-decoration: none;
-  background-color: var(--clr-neutral-100) !important;
-}
 .slide-cta .btn.theme-title:hover,
 .slide-cta .btn.theme-title:focus {
   text-decoration: none;
@@ -88,7 +83,9 @@
   color: var(--clr-theme-purple) !important;
 }
 
+/* updated css */
 
+/* Previous/Next Buttons */
 .slide-cta .btn-prevnext {
   font-size: 28px;
   color: #fff;
@@ -104,27 +101,9 @@
   font-weight: bold;
   text-align: center;
   box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.5);
-  transition: font-size 0.3s, height 0.3s, width 0.3s, line-height 0.3s,
-    background-color 0.3s, color 0.3s, border 0.3s;
 }
 
-
-.slide-cta .btn-prevnext {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.slide-cta .btn-prevnext:hover {
-  animation: swing 0.5s ease-in-out infinite;
-  background-color: #fff !important;
-  color: var(--clr-theme-blue) !important;
-  border-color: var(--clr-theme-blue);
-}
-
-
-
+/* Vote Button */
 .slide-cta .btn-vote {
   font-size: 28px;
   color: #fff;
@@ -136,21 +115,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* padding: 0,0,5px; */
   font-weight: bold;
   text-align: center;
   box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.5);
-  transition: font-size 0.3s, height 0.3s, width 0.3s, line-height 0.3s,
-    background-color 0.3s, color 0.3s, border 0.3s;
+  transition: all 0.3s ease;
+  background-color: var(--clr-blue-600);
 }
-
-
-.slide-cta .btn-vote {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
 
 .slide-cta .btn-vote:hover {
   animation: swing 0.5s ease-in-out infinite;
@@ -159,5 +129,24 @@
   border-color: var(--clr-blue-600);
 }
 
+.swipequestions-section .btn-prevnext {
+  transition: all 0.3s ease !important;
+  background-color: var(--clr-theme-blue) !important;
+  color: white !important;
+  border-color: white !important;
+}
 
+.swipequestions-section .btn-prevnext:hover {
+  animation: swing 0.5s ease-in-out infinite;
+  background-color: white !important;
+  color: var(--clr-theme-blue) !important;
+  border-color: var(--clr-theme-blue) !important;
+}
 
+/* remove the focus effect from brloe code */
+
+/* .slide-cta .btn:not(.theme-title):hover,
+.slide-cta .btn:not(.theme-title):focus {
+  text-decoration: none;
+  background-color: var(--clr-neutral-100) !important;
+} */

@@ -1194,21 +1194,21 @@
         prevBtn.classList.add("d-none"); // hide "Prev" at start
 
         function updateSlide(direction) {
-          //  Remove .active & any animation classes from the old slide
+          // Remove .active & any animation classes from the old slide
           slides[currentIndex].classList.remove(
             "active",
             "slide-in-left",
             "slide-in-right"
           );
 
-          //  Advance or go back
+          // Advance or go back
           if (direction === "next") {
             currentIndex = Math.min(currentIndex + 1, slides.length - 1);
           } else {
             currentIndex = Math.max(currentIndex - 1, 0);
           }
 
-          // Add .active + the correct animation class to the new slide
+          // Add .active + animation class to the new slide
           slides[currentIndex].classList.add(
             "active",
             direction === "next" ? "slide-in-left" : "slide-in-right"
@@ -1220,6 +1220,11 @@
           } else {
             prevBtn.classList.remove("d-none");
           }
+
+          // Reset button styles after slide change
+          nextBtn.style.backgroundColor = "";
+          nextBtn.style.color = "";
+          nextBtn.style.borderColor = "";
         }
 
         nextBtn.addEventListener("click", (e) => {
@@ -1242,6 +1247,14 @@
             li.addEventListener("click", () => {
               if (list.classList.contains("answered")) return;
               list.classList.add("answered");
+
+              // Reset next button styles when answer is selected
+              const nextBtn = document.querySelector(".btn-next");
+              if (nextBtn) {
+                nextBtn.style.backgroundColor = "";
+                nextBtn.style.color = "";
+                nextBtn.style.borderColor = "";
+              }
 
               const correctLi = list.querySelector('li[data-correct="true"]');
               const description = list.parentElement.querySelector(
