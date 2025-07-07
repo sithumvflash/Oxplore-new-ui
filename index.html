@@ -32,7 +32,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      padding-top: 70px;
+      /* padding-top: 70px; */
     }
 
     main {
@@ -43,56 +43,6 @@
       height: 100vh;
       position: relative;
       z-index: 1;
-    }
-
-    #question-grid {
-      min-height: 100vh;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Remove height constraints from grid children */
-    #question-grid .container-fluid,
-    #question-grid .row,
-    #question-grid .col,
-    #question-grid .bg-slide {
-      height: auto;
-    }
-
-    /* Adjust grid items to use min-height */
-    #question-grid .bg-slide {
-      min-height: 250px;
-    }
-
-    @media (min-width: 768px) {
-      #question-grid .bg-slide {
-        min-height: 50vh; /* Half viewport height on larger screens */
-      }
-    }
-
-    #question-grid-new {
-      min-height: 100vh;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Remove height constraints from grid children */
-    #question-grid-new .container-fluid,
-    #question-grid-new .row,
-    #question-grid-new .col,
-    #question-grid-new .bg-slide {
-      height: auto;
-    }
-
-    /* Adjust grid items to use min-height */
-    #question-grid-new .bg-slide {
-      min-height: 250px;
-    }
-
-    @media (min-width: 768px) {
-      #question-grid-new .bg-slide {
-        min-height: 50vh;
-      }
     }
 
     footer {
@@ -663,14 +613,12 @@
         </div>
 
         <!-- SECTION 1: question-grid-new -->
-        <div class="section" id="question-grid-new">
+        <div class="section grid-section" id="question-grid-new">
           <div class="slides">
             <!-- ── SLIDE 1: first 6 topics ── -->
             <div class="slide">
-              <div class="container-fluid px-0" style="padding-top: 35px">
-                <div
-                  class="row g-0 row-cols-1 row-cols-md-2 row-cols-lg-3 h-100"
-                >
+              <div class="container-fluid px-0">
+                <div class="row g-0 row-cols-1 row-cols-md-2 row-cols-lg-3">
                   <!-- Tile 1 -->
                   <div class="col">
                     <div
@@ -764,10 +712,8 @@
 
             <!-- ── SLIDE 2: next 6 topics ── -->
             <div class="slide">
-              <div class="container-fluid px-0" style="padding-top: 35px">
-                <div
-                  class="row g-0 row-cols-1 row-cols-md-2 row-cols-lg-3 h-100"
-                >
+              <div class="container-fluid px-0">
+                <div class="row g-0 row-cols-1 row-cols-md-2 row-cols-lg-3">
                   <!-- Tile 7 -->
                   <div class="col">
                     <div
@@ -874,8 +820,8 @@
 
     <!-- question grid -->
     <section id="question-grid" class="py-0">
-      <div class="container-fluid px-0 h-100" style="padding-top: 70px">
-        <div class="row g-0 row-cols-1 row-cols-md-2 row-cols-lg-3 h-100">
+      <div class="container-fluid px-0">
+        <div class="row g-0 row-cols-1 row-cols-md-2 row-cols-lg-3">
           <!-- Tile 1: green -->
           <div class="col">
             <div
